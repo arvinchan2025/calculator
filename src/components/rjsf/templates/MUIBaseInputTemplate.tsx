@@ -19,10 +19,14 @@ const MUIBaseInputTemplate = (props: BaseInputTemplateProps) => {
     return onChange(value === '' ? emptyValue : value);
   }
 
+  console.log("MUIBaseInputTemplate:", props)
+
   return (
     <TextField
       fullWidth
       label={props.label}
+      value={props.value || ''}
+      required={props.required}
       slotProps={{
         input: {
           endAdornment: uiOptions?.suffix? <InputAdornment position={"end"}>{`${uiOptions.suffix}`}</InputAdornment>: null,

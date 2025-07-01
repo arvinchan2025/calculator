@@ -9,15 +9,13 @@ const CustomObjectFieldTemplate = (props: ObjectFieldTemplateProps) => {
   })
   return (
     <Grid container spacing={2}>
-      <Grid size={6}>
+      <Grid size={12}>
         {fields.age}
       </Grid>
-      <Grid size={6} />
-      <Grid size={6}>
+      <Grid size={12}>
         {fields.height}
       </Grid>
-      <Grid size={6} />
-      <Grid size={6}>
+      <Grid size={12}>
         {fields.weight}
       </Grid>
     </Grid>

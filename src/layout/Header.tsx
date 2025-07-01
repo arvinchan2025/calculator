@@ -1,10 +1,12 @@
-import {AppBar, Toolbar} from "@mui/material";
+import {AppBar, Toolbar, Typography} from "@mui/material";
 
 
 const Header = () => {
     return (
         <AppBar position="static">
-            <Toolbar></Toolbar>
+            <Toolbar>
+              <Typography variant="h6">Calculator Now</Typography>
+            </Toolbar>
         </AppBar>
     )
 }

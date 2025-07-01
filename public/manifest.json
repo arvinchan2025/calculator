@@ -1,9 +1,9 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Calculator Now",
+  "name": "Caculator-Now.com: Free Online Calculators - Math, Fitness, Finance, Science",
   "icons": [
     {
-      "src": "favicon.ico",
+      "src": "demo.png",
       "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/x-icon"
     },
