@@ -1,11 +1,18 @@
 import {AppBar, Toolbar, Typography} from "@mui/material";
+import Language from "@/layout/Language";
 
 
 const Header = () => {
     return (
         <AppBar position="static">
             <Toolbar>
-              <Typography variant="h6">Calculator Now</Typography>
+              <Typography
+                variant="h6"
+                sx={{flex: 1}}
+              >
+                Calculator Now
+              </Typography>
+              <Language />
             </Toolbar>
         </AppBar>
     )

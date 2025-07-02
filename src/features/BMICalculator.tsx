@@ -6,9 +6,11 @@ import CustomObjectFieldTemplate from "./ObjectFieldTemplate";
 import {useRef, useState} from "react";
 import Grid from "@mui/material/Grid2";
 import {Calculate, Clear} from "@mui/icons-material";
+import {useTranslation} from "react-i18next";
 
 
 const BMICalculator = () => {
+  const {t} = useTranslation();
   const formRef = useRef<any>(null);
   const [formData, setFormData] = useState({})
   const [bmi, setBmi] = useState<any>(0)
@@ -21,11 +23,11 @@ const BMICalculator = () => {
       // },
       weight: {
         type: "number",
-        title: "Weight"
+        title: t('bmi.weight')
       },
       height: {
         type: "number",
-        title: "Height"
+        title: t('bmi.height')
       }
     },
     required: ['weight', 'height'],
@@ -35,12 +37,12 @@ const BMICalculator = () => {
     'ui:ObjectFieldTemplate': CustomObjectFieldTemplate,
     height: {
       'ui:options': {
-        suffix: "cm"
+        suffix: t("bmi.unit.cm")
       }
     },
     weight: {
       'ui:options': {
-        suffix: "kg"
+        suffix: t("bmi.unit.kg")
       }
     }
   }
@@ -48,21 +50,21 @@ const BMICalculator = () => {
   const getBMILevel = () => {
     const value = parseFloat(bmi)
     if (value < 16) {
-      return "Severe Thinness"
+      return t('bmi.severeThinness')
     } else if (value < 17) {
-      return "Moderate Thinness"
+      return t('bmi.moderateThinness')
     } else if (value < 18.5) {
-      return "Mild Thinness"
+      return t('bmi.mildThinness')
     } else if (value < 15) {
-      return "Normal"
+      return t('bmi.normal')
     } else if (value < 30) {
-      return "Overweight"
+      return t('bmi.overweight')
     } else if (value < 35) {
-      return "Obese Class I"
+      return t('bmi.obeseClassI')
     } else if (value < 40) {
-      return "Obese Class II"
+      return t('bmi.obeseClassII')
     } else {
-      return "Obese Class III"
+      return t('bmi.obeseClassIII')
     }
   }
 
@@ -81,7 +83,9 @@ const BMICalculator = () => {
   return (
     <Grid container spacing={2}>
       <Grid size={12}>
-        <Typography variant={"h5"} sx={{mb: 2}}>BMI Calculator</Typography>
+        <Typography variant={"h5"} sx={{mb: 2}}>
+          {t('bmi.calculator')}
+        </Typography>
       </Grid>
       <Grid size={6}>
         <RJSFForm
@@ -100,14 +104,14 @@ const BMICalculator = () => {
             startIcon={<Calculate/>}
             onClick={onSubmit}
           >
-            Calculate
+            {t("common.button.calculate")}
           </Button>
           <Button
             variant={"outlined"}
             startIcon={<Clear/>}
             onClick={() => formRef.current?.reset()}
           >
-            Clear
+            {t("common.button.clear")}
           </Button>
         </Stack>
       </Grid>
@@ -118,19 +122,11 @@ const BMICalculator = () => {
       </Grid>
       <Grid size={12}>
         <Stack spacing={2}>
-          <Typography variant={"h4"}>BMI introduction</Typography>
+          <Typography variant={"h4"}>
+            {t("bmi.introduction")}
+          </Typography>
           <Typography variant={"body1"}>
-            BMI is a measurement of a person's leanness or corpulence based on their height and weight, and is intended
-            to
-            quantify tissue mass. It is widely used as a general indicator of whether a person has a healthy body weight
-            for their height. Specifically, the value obtained from the calculation of BMI is used to categorize whether
-            a
-            person is underweight, normal weight, overweight, or obese depending on what range the value falls between.
-            These ranges of BMI vary based on factors such as region and age, and are sometimes further divided into
-            subcategories such as severely underweight or very severely obese. Being overweight or underweight can have
-            significant health effects, so while BMI is an imperfect measure of healthy body weight, it is a useful
-            indicator of whether any additional testing or action is required. Refer to the table below to see the
-            different categories based on BMI that are used by the calculator.
+            {t("bmi.introduction.content")}
           </Typography>
         </Stack>
       </Grid>

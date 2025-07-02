@@ -1,0 +1,19 @@
+{
+  "bmi.weight": "体重",
+  "bmi.height": "身高",
+  "bmi.severeThinness": "严重消瘦",
+  "bmi.moderateThinness": "中度消瘦",
+  "bmi.mildThinness": "轻度消瘦",
+  "bmi.normal": "正常",
+  "bmi.overweight": "肥胖前期",
+  "bmi.obeseClassI": "轻度肥胖",
+  "bmi.obeseClassII": "中度肥胖",
+  "bmi.obeseClassIII": "严重肥胖",
+  "bmi.calculator": "BMI 计算器",
+  "bmi.unit.cm": "cm",
+  "bmi.unit.kg": "kg",
+  "bmi.introduction": "BMI(身体质量指数)",
+  "bmi.introduction.content": "身体质量指数（英语：Body Mass Index，简称BMI）又称凯特莱指数（Quetelet index，/kɛtəˈleɪ/[1]），简称体质指数[2]，是由一个人的质量（体重）和身高计算出的一个数值。BMI的定义是体重除以身高的平方，以千克/平方米为单位表示，由质量（千克）和身高（米）得出：\n\nBMI\n=\nw\nh\n2\n{\\displaystyle {\\mbox{BMI}}={\\frac {w}{h^{2}}}}，其中w为体重；h为身高",
+  "common.button.calculate": "计算",
+  "common.button.clear": "清空"
+}
