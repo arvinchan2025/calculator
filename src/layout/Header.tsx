@@ -1,5 +1,5 @@
 import {AppBar, Toolbar, Typography} from "@mui/material";
-import Language from "@/layout/Language";
+import Language from "./Language";
 
 
 const Header = () => {
