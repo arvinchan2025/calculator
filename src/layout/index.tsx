@@ -1,6 +1,6 @@
 import Header from "./Header";
-import BMICalculator from "../features/BMICalculator";
 import Grid from "@mui/material/Grid2";
+import {Outlet} from "react-router-dom";
 
 
 const MainLayout = () => {
@@ -9,11 +9,11 @@ const MainLayout = () => {
       <Grid size={12}>
         <Header/>
       </Grid>
-      <Grid size={3}/>
-      <Grid size={6} sx={{p: 2}}>
-        <BMICalculator/>
+      <Grid size={2}/>
+      <Grid size={8} sx={{p: 2}}>
+        <Outlet />
       </Grid>
-      <Grid size={3}/>
+      <Grid size={2}/>
     </Grid>
   )
 }

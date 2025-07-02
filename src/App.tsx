@@ -1,10 +1,13 @@
 import React from 'react';
 import './App.css';
-import MainLayout from "./layout";
+import {BrowserRouter} from "react-router-dom";
+import MainRouter from "@/router/main";
 
 function App() {
   return (
-    <MainLayout />
+    <BrowserRouter basename={'/'}>
+      <MainRouter/>
+    </BrowserRouter>
   );
 }
 
