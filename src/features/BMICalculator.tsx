@@ -1,4 +1,4 @@
-import {Button, Stack, Typography} from "@mui/material";
+import {Box, Button, Stack, Typography} from "@mui/material";
 import {RJSFSchema, UiSchema} from "@rjsf/utils";
 import validator from '@rjsf/validator-ajv8';
 import RJSFForm from "../components/rjsf/RJSFForm";
@@ -94,6 +94,11 @@ const BMICalculator = () => {
           uiSchema={uiSchema}
           validator={validator}
         />
+        <Box>
+          <Typography variant={"h5"} sx={{mt: 2}}>
+            BMI = {bmi} kg/m<sup>2</sup> ({getBMILevel()})
+          </Typography>
+        </Box>
         <Stack
           sx={{padding: "16px 0"}}
           spacing={2}
@@ -114,11 +119,6 @@ const BMICalculator = () => {
             {t("common.button.clear")}
           </Button>
         </Stack>
-      </Grid>
-      <Grid size={6}>
-        <Typography variant={"h5"} sx={{mt: 2}}>
-          BMI = {bmi} kg/m<sup>2</sup> ({getBMILevel()})
-        </Typography>
       </Grid>
       <Grid size={12}>
         <Stack spacing={2}>
