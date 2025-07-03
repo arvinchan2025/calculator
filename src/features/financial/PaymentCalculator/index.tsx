@@ -42,6 +42,11 @@ const PaymentCalculator = () => {
         suffix: t("calculator.unit.year")
       }
     },
+    rate: {
+      'ui:options': {
+        suffix: '%'
+      }
+    },
   }
 
   const onCalculate = async () => {
