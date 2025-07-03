@@ -1,0 +1,19 @@
+{
+  "bmi.weight": "peso",
+  "bmi.height": "altura",
+  "bmi.severeThinness": "Emaciación severa",
+  "bmi.moderateThinness": "Emaciación moderada",
+  "bmi.mildThinness": "Emaciación leve",
+  "bmi.normal": "Normal",
+  "bmi.overweight": "Demasiado mojado",
+  "bmi.obeseClassI": "Obesidad leve",
+  "bmi.obeseClassII": "Obesidad moderada",
+  "bmi.obeseClassIII": "Obesidad severa",
+  "bmi.calculator": "BMI Calcurato",
+  "bmi.unit.cm": "cm",
+  "bmi.unit.kg": "kg",
+  "bmi.introduction": "",
+  "bmi.introduction.content": "",
+  "common.button.calculate": "Calcular",
+  "common.button.clear": "Vacío"
+}

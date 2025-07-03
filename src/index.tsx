@@ -4,6 +4,7 @@ import './index.css';
 import App from './App';
 import {I18nextProvider} from "react-i18next";
 import i18next from "./i18n";
+import MuiThemeProvider from "@/providers/MuiThemeProvider";
 // import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(
@@ -12,7 +13,9 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <I18nextProvider i18n={i18next}>
-      <App />
+      <MuiThemeProvider>
+        <App/>
+      </MuiThemeProvider>
     </I18nextProvider>
   </React.StrictMode>
 );

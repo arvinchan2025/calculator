@@ -1,0 +1,19 @@
+{
+  "bmi.weight": "وزن",
+  "bmi.height": "ارتفاع",
+  "bmi.severeThinness": "فقدان الوزن الشديد",
+  "bmi.moderateThinness": "فقدان الوزن المعتدل",
+  "bmi.mildThinness": "فقدان الوزن الخفيف",
+  "bmi.normal": "طبيعي",
+  "bmi.overweight": "زيادة الوزن",
+  "bmi.obeseClassI": "السمنة الخفيفة",
+  "bmi.obeseClassII": "السمنة المعتدلة",
+  "bmi.obeseClassIII": "السمنة الشديدة",
+  "bmi.calculator": "BMI آلة حاسبة",
+  "bmi.unit.cm": "cm",
+  "bmi.unit.kg": "kg",
+  "bmi.introduction": "",
+  "bmi.introduction.content": "",
+  "common.button.calculate": "احسب",
+  "common.button.clear": "واضح"
+}
