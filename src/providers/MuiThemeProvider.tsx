@@ -27,16 +27,7 @@ export const useMuiThemeContext = () => {
 const MuiThemeProvider: React.FC<ProviderProps> = (props) => {
   const currentLanguage = localStorage.getItem("i18nextLng");
   const defaultDirection = currentLanguage === "ar" ? "rtl" : "ltr"
-  const [direction, setDirection] = useState<string>(defaultDirection)
-
-
-  const theme = (outerTheme: Theme) =>
-  createTheme({
-    direction: 'rtl',
-    palette: {
-      mode: 'light',
-    },
-  });
+  const [direction, setDirection] = useState<any>(defaultDirection)
 
   const cacheRtl = useMemo(() => createCache({
     key: `mui-${direction}`,
@@ -53,7 +44,17 @@ const MuiThemeProvider: React.FC<ProviderProps> = (props) => {
       setDirection,
     }}>
       <CacheProvider value={cacheRtl}>
-        <ThemeProvider theme={theme}>
+        <ThemeProvider theme={{
+          ...createTheme({
+            direction: direction,
+            palette: {
+              mode: 'light',
+            },
+            typography: {
+              fontFamily: "Poppins,SemiBold"
+            }
+          })
+        }}>
           {props.children}
         </ThemeProvider>
       </CacheProvider>
