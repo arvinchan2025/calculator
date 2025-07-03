@@ -12,6 +12,7 @@
     "@mui/styles": "^6.4.12",
     "@mui/utils": "^7.2.0",
     "@mui/x-charts": "^8.6.0",
+    "@mui/x-data-grid": "^8.6.0",
     "@rjsf/core": "^5.24.12",
     "@rjsf/mui": "^5.24.11",
     "@rjsf/utils": "^5.24.12",

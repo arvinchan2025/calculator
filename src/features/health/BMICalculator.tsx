@@ -1,9 +1,9 @@
-import {Box, Button, Stack, Typography} from "@mui/material";
+import {Box, Breadcrumbs, Button, Link, Stack, Typography} from "@mui/material";
 import {RJSFSchema, UiSchema} from "@rjsf/utils";
 import validator from '@rjsf/validator-ajv8';
-import RJSFForm from "../components/rjsf/RJSFForm";
-import CustomObjectFieldTemplate from "./ObjectFieldTemplate";
-import {useRef, useState} from "react";
+import RJSFForm from "../../components/rjsf/RJSFForm";
+import CustomObjectFieldTemplate from "../ObjectFieldTemplate";
+import React, {useRef, useState} from "react";
 import Grid from "@mui/material/Grid2";
 import {Calculate, Clear} from "@mui/icons-material";
 import {useTranslation} from "react-i18next";
@@ -82,6 +82,18 @@ const BMICalculator = () => {
 
   return (
     <Grid container spacing={2}>
+      <Grid size={12}>
+        <Breadcrumbs aria-label="breadcrumb">
+          <Link
+            underline="hover"
+            color="inherit"
+            href="/home"
+          >
+            {t('calculator.home')}
+          </Link>
+          <Typography sx={{color: 'text.primary'}}>{t('bmi.calculator')}</Typography>
+        </Breadcrumbs>
+      </Grid>
       <Grid size={12}>
         <Typography variant={"h5"} sx={{mb: 2}}>
           {t('bmi.calculator')}
