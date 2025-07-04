@@ -50,6 +50,7 @@ const PaymentCalculator = () => {
     >
       <Calculator
         title={t('payment.calculator')}
+        description={t('payment.calculator.description')}
       >
         <Grid size={6}>
           <Tabs

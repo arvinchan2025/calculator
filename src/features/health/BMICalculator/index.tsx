@@ -1,6 +1,6 @@
-import {Stack, Typography} from "@mui/material";
+import {Stack, TextField, Typography} from "@mui/material";
 import {RJSFSchema, UiSchema} from "@rjsf/utils";
-import CustomObjectFieldTemplate from "../ObjectFieldTemplate";
+import CustomObjectFieldTemplate from "./ObjectFieldTemplate";
 import React, {useRef, useState} from "react";
 import Grid from "@mui/material/Grid2";
 import {useTranslation} from "react-i18next";
@@ -11,7 +11,7 @@ import Calculator from "@/layout/Calculator";
 const BMICalculator = () => {
   const {t} = useTranslation();
   const formRef = useRef<any>(null);
-  const [bmi, setBmi] = useState<any>(0)
+  const [result, setResult] = useState<any>(null)
   const schema: RJSFSchema = {
     type: "object",
     properties: {
@@ -41,32 +41,40 @@ const BMICalculator = () => {
     }
   }
 
-  const getBMILevel = () => {
+  const getBMILevel = (bmi: any) => {
     const value = parseFloat(bmi)
     if (value < 16) {
-      return t('bmi.severeThinness')
+      return {lv: 'error', label: t('bmi.severeThinness')}
     } else if (value < 17) {
-      return t('bmi.moderateThinness')
+      return {lv: 'error', label: t('bmi.moderateThinness')}
     } else if (value < 18.5) {
-      return t('bmi.mildThinness')
+      return {lv: 'warning', label: t('bmi.mildThinness')}
     } else if (value < 15) {
-      return t('bmi.normal')
+      return {lv: 'info', label: t('bmi.normal')}
     } else if (value < 30) {
-      return t('bmi.overweight')
+      return {lv: 'warning', label: t('bmi.overweight')}
     } else if (value < 35) {
-      return t('bmi.obeseClassI')
+      return {lv: 'warning', label: t('bmi.obeseClassI')}
     } else if (value < 40) {
-      return t('bmi.obeseClassII')
+      return {lv: 'error', label: t('bmi.obeseClassII')}
     } else {
-      return t('bmi.obeseClassIII')
+      return {lv: 'error', label: t('bmi.obeseClassIII')}
     }
   }
 
   const onCalculate = async (formData: any) => {
     const height = formData?.height / 100
-    const ret = (formData.weight / (height * height)).toFixed(1)
-    setBmi(ret)
+    const bmi = (formData.weight / (height * height))
+    const bmiPrime = (bmi / 25)
+    const checked = getBMILevel(bmi)
+    setResult({
+      bmi: bmi,
+      bmiPrime: bmiPrime,
+      ...checked
+    })
   }
+
+  // BMI = {bmi} kg/m<sup>2</sup> ({getBMILevel()})
 
   return (
     <Calculator
@@ -78,11 +86,27 @@ const BMICalculator = () => {
           uiSchema={uiSchema}
           onCalculate={onCalculate}
         />
-      </Grid>
-      <Grid size={12}>
-        {bmi > 0 && <Typography variant={"h5"} sx={{mt: 2}} color={"info"}>
-          BMI = {bmi} kg/m<sup>2</sup> ({getBMILevel()})
-        </Typography>}
+        {result &&
+            <Stack spacing={2} sx={{padding: "16px 0"}}>
+                <Typography variant={'h5'} color={result.lv}>{result.label}</Typography>
+                <TextField
+                    label={t('bmi.bmi')}
+                    fullWidth
+                    value={result.bmi.toFixed(1)}
+                    slotProps={{
+                      input: {
+                        endAdornment: <Typography>kg/m<sup>2</sup></Typography>
+                      }
+                    }}
+                />
+                <TextField
+                    label={t('bmi.bmiPrime')}
+                    fullWidth
+                    value={result.bmiPrime.toFixed(1)}
+                />
+            </Stack>
+
+        }
       </Grid>
       <Grid size={12}>
         <Stack spacing={2}>

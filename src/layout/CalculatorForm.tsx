@@ -11,7 +11,7 @@ const CalculatorForm = (props: any) => {
   const {t} = useTranslation();
   const location = useLocation()
   const [searchParams, setSearchParams] = useSearchParams()
-  const [formData, setFormData] = React.useState<any>(null)
+  const [formData, setFormData] = React.useState<any>(props.formData)
   const [share, setShare] = React.useState<any>({
     link: null,
     open: false

@@ -49,7 +49,8 @@ const MonthlyPayments = (props: Record<string, any>) => {
       paginationMode={'server'}
       hideFooter={true}
       sx={{
-        height: "50vh"
+        height: "50vh",
+        backgroundColor: 'inherit'
       }}
     />
   )
