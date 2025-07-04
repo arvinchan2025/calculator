@@ -1,10 +1,12 @@
 import Grid from "@mui/material/Grid2";
-import {Card, CardContent, CardHeader, Link, List, ListItem} from "@mui/material";
+import {Button, Card, CardContent, CardHeader, Link, List, ListItem, Stack, Typography} from "@mui/material";
 import {useTranslation} from "react-i18next";
+import {useNavigate} from "react-router-dom";
 
 
 const HomePage = () => {
   const {t} = useTranslation();
+  const navigate = useNavigate()
   const calculators = [
     {label: t("bmi.calculator"), href: '/bmi-calculator'},
     {label: t("payment.calculator"), href: '/loan-payoff-calculator'},
@@ -19,13 +21,24 @@ const HomePage = () => {
       alignItems: "center"
     }}>
       <Grid size={12}>
-        <List>
+        <Stack direction={'row'} spacing={2}>
           {calculators.map((calculator, index) => (
-            <ListItem key={`calculator${index}`}>
-              <Link href={calculator.href}>{calculator.label}</Link>
-            </ListItem>
+            <Button
+              key={`calculator${index}`}
+              sx={{
+                width: '256px',
+                height: '128px',
+                textTransform: 'none'
+              }}
+              variant={"outlined"}
+              onClick={() => navigate(calculator.href)}
+            >
+              <Stack>
+                <Typography>{calculator.label}</Typography>
+              </Stack>
+            </Button>
           ))}
-        </List>
+        </Stack>
       </Grid>
     </Grid>
   )
