@@ -62,16 +62,10 @@ const BMICalculator = () => {
     }
   }
 
-  const onCalculate = async () => {
-    const isValid = formRef.current?.validateForm()
-    if (isValid) {
-      const formData = formRef.current?.state.formData
-      const height = formData?.height / 100
-      console.log(formData.weight, formData.height)
-      const ret = (formData.weight / (height * height)).toFixed(1)
-      console.log(formRef.current, formData, ret)
-      setBmi(ret)
-    }
+  const onCalculate = async (formData: any) => {
+    const height = formData?.height / 100
+    const ret = (formData.weight / (height * height)).toFixed(1)
+    setBmi(ret)
   }
 
   return (
@@ -84,6 +78,11 @@ const BMICalculator = () => {
           uiSchema={uiSchema}
           onCalculate={onCalculate}
         />
+      </Grid>
+      <Grid size={12}>
+        {bmi > 0 && <Typography variant={"h5"} sx={{mt: 2}} color={"info"}>
+          BMI = {bmi} kg/m<sup>2</sup> ({getBMILevel()})
+        </Typography>}
       </Grid>
       <Grid size={12}>
         <Stack spacing={2}>
