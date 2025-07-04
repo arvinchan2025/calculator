@@ -21,7 +21,7 @@ const Language = () => {
 
   return (
     <Box>
-      <Translate {...bindTrigger(popupState)} />
+      <Translate {...bindTrigger(popupState)} color={"primary"}/>
       <Menu
         {...bindPopper(popupState)}
         sx={{
@@ -31,12 +31,13 @@ const Language = () => {
         {languages.map((language) => {
           return (
             <ListItem key={language.code} disablePadding>
-              <ListItemButton onClick={async () => {
-                localStorage.setItem("i18nextLng", language.code);
-                await i18n.changeLanguage(language.code);
-                setDirection(language.code === 'ar'? 'rtl' : 'ltr');
-                popupState.close()
-              }}>
+              <ListItemButton
+                onClick={async () => {
+                  localStorage.setItem("i18nextLng", language.code);
+                  await i18n.changeLanguage(language.code);
+                  setDirection(language.code === 'ar' ? 'rtl' : 'ltr');
+                  popupState.close()
+                }}>
                 {language.label}
               </ListItemButton>
             </ListItem>

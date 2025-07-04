@@ -5,13 +5,18 @@ import {Outlet} from "react-router-dom";
 
 const MainLayout = () => {
   return (
-    <Grid container>
+    <Grid
+      container
+      sx={{
+        height: "100%",
+      }}
+    >
       <Grid size={12}>
         <Header/>
       </Grid>
       <Grid size={2}/>
       <Grid size={8} sx={{p: 2}}>
-        <Outlet />
+        <Outlet/>
       </Grid>
       <Grid size={2}/>
     </Grid>
