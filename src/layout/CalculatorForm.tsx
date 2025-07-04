@@ -30,7 +30,7 @@ const CalculatorForm = (props: any) => {
       const formData = formRef.current?.state.formData
       console.log("onShare:", JSON.stringify(formData))
       const encodeFormData = btoa(encodeURIComponent(JSON.stringify(formData)))
-      setShare({open: true, link: `https://calculation-now${location.pathname}?result=${encodeFormData}`})
+      setShare({open: true, link: `https://calculator-now$.com{location.pathname}?result=${encodeFormData}`})
     }
   }
 
