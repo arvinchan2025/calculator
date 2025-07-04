@@ -36,6 +36,7 @@ const RJSFForm = (props: RJSFFormProps, ref: ForwardedRef<any>) => {
       widgets={customWidgets}
       uiSchema={customUiSchema}
       onSubmit={props.onSubmit}
+      showErrorList={false}
     />
   )
 }

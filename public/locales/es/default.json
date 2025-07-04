@@ -19,6 +19,8 @@
   "bmi.introduction": "",
   "bmi.introduction.content": "",
   "payment.calculator": "Calculadora de amortización de préstamos",
+  "payment.fixedTerm": "Plazo fijo",
+  "payment.fixedPayment": "Pago fijo",
   "payment.loanAmount": "Cantidad",
   "payment.loanTerm": "Término",
   "payment.interestRate": "Tasa de interés anual",

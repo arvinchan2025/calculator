@@ -19,6 +19,8 @@
   "bmi.introduction": "",
   "bmi.introduction.content": "",
   "payment.calculator": "حاسبة سداد القروض",
+  "payment.fixedTerm": "مدة محددة",
+  "payment.fixedPayment": "الدفع الثابت",
   "payment.loanAmount": "كمية",
   "payment.loanTerm": "شرط",
   "payment.interestRate": "سعر الفائدة السنوي",
