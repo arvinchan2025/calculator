@@ -96,6 +96,7 @@ const BMICalculator = () => {
                     value={result.bmi.toFixed(1)}
                     slotProps={{
                       input: {
+                        readOnly: true,
                         endAdornment: <Typography>kg/m<sup>2</sup></Typography>
                       }
                     }}
@@ -104,6 +105,12 @@ const BMICalculator = () => {
                     label={t('bmi.bmiPrime')}
                     fullWidth
                     value={result.bmiPrime.toFixed(1)}
+                    slotProps={{
+                      input: {
+                        readOnly: true,
+                        endAdornment: <Typography>BMI/25</Typography>
+                      }
+                    }}
                 />
             </Stack>
 

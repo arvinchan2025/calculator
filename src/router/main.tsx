@@ -6,6 +6,7 @@ const HomePage = lazy(() => import("@/features/HomePage"))
 const BMICalculator = lazy(() => import("@/features/health/BMICalculator"))
 const PaymentCalculator = lazy(() => import("@/features/financial/PaymentCalculator"))
 const TipCalculator = lazy(() => import("@/features/other/TipCalculator"))
+const PercentOffCalculator = lazy(() => import("@/features/financial/PercentOffCalculator"))
 
 
 const MainRouter = () => {
@@ -16,7 +17,8 @@ const MainRouter = () => {
       {path: 'home', element: <HomePage/>},
       {path: 'bmi-calculator', element: <BMICalculator/>},
       {path: 'loan-payoff-calculator', element: <PaymentCalculator/>},
-      {path: 'tip-calculator', element: <TipCalculator/>}
+      {path: 'tip-calculator', element: <TipCalculator/>},
+      {path: 'percent-off-calculator', element: <PercentOffCalculator/>}
     ]
   }])
 }

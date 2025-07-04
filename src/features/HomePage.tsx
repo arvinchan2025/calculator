@@ -11,6 +11,7 @@ const HomePage = () => {
     {label: t("bmi.calculator"), href: '/bmi-calculator'},
     {label: t("payment.calculator"), href: '/loan-payoff-calculator'},
     {label: t("tip.calculator"), href: '/tip-calculator'},
+    {label: t("percentOff.calculator"), href: '/percent-off-calculator'},
   ]
   return (
     <Grid container sx={{

@@ -5,31 +5,30 @@ import Calculator from "@/layout/Calculator";
 import Grid from "@mui/material/Grid2";
 import CalculatorForm from "@/layout/CalculatorForm";
 import {Stack, TextField} from "@mui/material";
-import ServiceTips from "@/features/other/TipCalculator/ServiceTips";
 
 
-const TipCalculator = () => {
+const PercentOffCalculator = () => {
   const {t} = useTranslation();
-  const [bill, setBill] = useState<any>()
+  const [result, setResult] = useState<any>()
   const schema: RJSFSchema = {
     type: "object",
     properties: {
-      bill: {
+      price: {
         type: "number",
-        title: t('tip.bill'),
-        default: 100
+        title: t('percentOff.price'),
+        default: 39.99
       },
-      tip: {
+      discount: {
         type: "number",
-        title: t('tip.tip'),
+        title: t('percentOff.discount'),
         default: 15
       },
     },
-    required: ["bill", 'tip'],
+    required: ["price", 'discount'],
   }
 
   const uiSchema: UiSchema = {
-    tip: {
+    discount: {
       'ui:options': {
         suffix: '%'
       }
@@ -37,18 +36,18 @@ const TipCalculator = () => {
   }
 
   const onCalculate = async (formData: any) => {
-    const tip = formData.bill * formData.tip / 100
-    const total = formData.bill + tip
-    setBill({
-      tip,
-      total
+    const saved = formData.price * formData.discount / 100
+    const finalPrice = formData.price - saved
+    setResult({
+      finalPrice,
+      saved
     })
   }
 
   return (
     <Calculator
-      title={t('tip.calculator')}
-      description={t('tip.calculator.description')}
+      title={t('percentOff.calculator')}
+      description={t('percentOff.calculator.description')}
     >
       <Grid size={6}>
         <CalculatorForm
@@ -56,11 +55,11 @@ const TipCalculator = () => {
           uiSchema={uiSchema}
           onCalculate={onCalculate}
         />
-        {bill && <Stack spacing={2} sx={{padding: "16px 0"}}>
+        {result && <Stack spacing={2} sx={{padding: "16px 0"}}>
             <TextField
-                label={t('tip.tip')}
+                label={t('percentOff.finalPrice')}
                 fullWidth
-                value={bill.tip.toFixed(2)}
+                value={result.finalPrice.toFixed(2)}
                 slotProps={{
                   input: {
                     readOnly: true
@@ -68,9 +67,9 @@ const TipCalculator = () => {
                 }}
             />
             <TextField
-                label={t('tip.total')}
+                label={t('percentOff.saved')}
                 fullWidth
-                value={bill.total.toFixed(2)}
+                value={result.saved.toFixed(2)}
                 slotProps={{
                   input: {
                     readOnly: true
@@ -79,10 +78,7 @@ const TipCalculator = () => {
             />
         </Stack>}
       </Grid>
-      <Grid size={12}>
-        <ServiceTips />
-      </Grid>
     </Calculator>
   )
 }
-export default TipCalculator;
+export default PercentOffCalculator;
