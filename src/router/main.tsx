@@ -1,9 +1,11 @@
 import {Navigate, useRoutes} from "react-router-dom";
 import MainLayout from "@/layout";
-import BMICalculator from "@/features/health/BMICalculator";
-import HomePage from "@/features/HomePage";
-import PaymentCalculator from "@/features/financial/PaymentCalculator";
-import TipCalculator from "@/features/other/TipCalculator";
+import {lazy} from "react";
+
+const HomePage = lazy(() => import("@/features/HomePage"))
+const BMICalculator = lazy(() => import("@/features/health/BMICalculator"))
+const PaymentCalculator = lazy(() => import("@/features/financial/PaymentCalculator"))
+const TipCalculator = lazy(() => import("@/features/other/TipCalculator"))
 
 
 const MainRouter = () => {

@@ -79,6 +79,7 @@ const BMICalculator = () => {
   return (
     <Calculator
       title={t('bmi.calculator')}
+      description={t('bmi.calculator.description')}
     >
       <Grid size={6}>
         <CalculatorForm
