@@ -1,11 +1,12 @@
 import {useTranslation} from "react-i18next";
-import React, {useContext, useRef, useState} from "react";
+import React, {useContext, useState} from "react";
 import Grid from "@mui/material/Grid2";
-import {Box, Breadcrumbs, Link, Tab, Tabs, Typography} from "@mui/material";
+import {Box, Tab, Tabs} from "@mui/material";
 import MonthlyPayments from "@/features/financial/PaymentCalculator/MonthPayments";
 import Summary from "@/features/financial/PaymentCalculator/Summary";
 import FixedTerm from "@/features/financial/PaymentCalculator/FixedTerm";
 import FixedMonthlyPayment from "@/features/financial/PaymentCalculator/FixedMonthlyPayment";
+import Calculator from "@/layout/Calculator";
 
 
 type PaymentCalculatorContextProps = Record<string, any>
@@ -24,7 +25,7 @@ export const usePaymentCalculatorContext = () => {
 
 
 const CustomTabPanel = (props: any) => {
-  console.log("props",  props)
+  console.log("props", props)
   return (
     <Box
       role="tabpanel"
@@ -47,24 +48,9 @@ const PaymentCalculator = () => {
         setResult
       }}
     >
-      <Grid container spacing={2}>
-        <Grid size={12}>
-          <Breadcrumbs aria-label="breadcrumb">
-            <Link
-              underline="hover"
-              color="inherit"
-              href="/home"
-            >
-              {t('calculator.home')}
-            </Link>
-            <Typography sx={{color: 'text.primary'}}>{t('payment.calculator')}</Typography>
-          </Breadcrumbs>
-        </Grid>
-        <Grid size={12}>
-          <Typography variant={"h5"} sx={{mb: 2}}>
-            {t('payment.calculator')}
-          </Typography>
-        </Grid>
+      <Calculator
+        title={t('payment.calculator')}
+      >
         <Grid size={6}>
           <Tabs
             value={tab}
@@ -92,7 +78,7 @@ const PaymentCalculator = () => {
             <Summary result={result}/>
             <MonthlyPayments result={result}/>
         </Grid>}
-      </Grid>
+      </Calculator>
     </PaymentCalculatorContext.Provider>
   )
 }

@@ -1,6 +1,9 @@
 {
+  "common.button.share": "Share",
   "common.button.calculate": "Calculate",
   "common.button.clear": "Clear",
+  "common.button.copy": "Copy",
+  "calculator.share.description": "Click the button below to copy the link. You can send it to anyone to share your current calculation.",
   "calculator.unit.cm": "cm",
   "calculator.unit.kg": "kg",
   "calculator.unit.year": "years",

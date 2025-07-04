@@ -1,26 +1,20 @@
-import {Box, Breadcrumbs, Button, Link, Stack, Typography} from "@mui/material";
+import {Stack, Typography} from "@mui/material";
 import {RJSFSchema, UiSchema} from "@rjsf/utils";
-import validator from '@rjsf/validator-ajv8';
-import RJSFForm from "../../components/rjsf/RJSFForm";
 import CustomObjectFieldTemplate from "../ObjectFieldTemplate";
 import React, {useRef, useState} from "react";
 import Grid from "@mui/material/Grid2";
-import {Calculate, Clear} from "@mui/icons-material";
 import {useTranslation} from "react-i18next";
+import CalculatorForm from "@/layout/CalculatorForm";
+import Calculator from "@/layout/Calculator";
 
 
 const BMICalculator = () => {
   const {t} = useTranslation();
   const formRef = useRef<any>(null);
-  const [formData, setFormData] = useState({})
   const [bmi, setBmi] = useState<any>(0)
   const schema: RJSFSchema = {
     type: "object",
     properties: {
-      // age: {
-      //   type: "number",
-      //   title: "Age"
-      // },
       weight: {
         type: "number",
         title: t('bmi.weight')
@@ -37,12 +31,12 @@ const BMICalculator = () => {
     'ui:ObjectFieldTemplate': CustomObjectFieldTemplate,
     height: {
       'ui:options': {
-        suffix: t("bmi.unit.cm")
+        suffix: t("calculator.unit.cm")
       }
     },
     weight: {
       'ui:options': {
-        suffix: t("bmi.unit.kg")
+        suffix: t("calculator.unit.kg")
       }
     }
   }
@@ -68,7 +62,7 @@ const BMICalculator = () => {
     }
   }
 
-  const onSubmit = async () => {
+  const onCalculate = async () => {
     const isValid = formRef.current?.validateForm()
     if (isValid) {
       const formData = formRef.current?.state.formData
@@ -81,56 +75,15 @@ const BMICalculator = () => {
   }
 
   return (
-    <Grid container spacing={2}>
-      <Grid size={12}>
-        <Breadcrumbs aria-label="breadcrumb">
-          <Link
-            underline="hover"
-            color="inherit"
-            href="/home"
-          >
-            {t('calculator.home')}
-          </Link>
-          <Typography sx={{color: 'text.primary'}}>{t('bmi.calculator')}</Typography>
-        </Breadcrumbs>
-      </Grid>
-      <Grid size={12}>
-        <Typography variant={"h5"} sx={{mb: 2}}>
-          {t('bmi.calculator')}
-        </Typography>
-      </Grid>
+    <Calculator
+      title={t('bmi.calculator')}
+    >
       <Grid size={6}>
-        <RJSFForm
-          ref={formRef}
+        <CalculatorForm
           schema={schema}
           uiSchema={uiSchema}
-          validator={validator}
+          onCalculate={onCalculate}
         />
-        <Box>
-          <Typography variant={"h5"} sx={{mt: 2}}>
-            BMI = {bmi} kg/m<sup>2</sup> ({getBMILevel()})
-          </Typography>
-        </Box>
-        <Stack
-          sx={{padding: "16px 0"}}
-          spacing={2}
-          direction={"row"}
-        >
-          <Button
-            variant={"contained"}
-            startIcon={<Calculate/>}
-            onClick={onSubmit}
-          >
-            {t("common.button.calculate")}
-          </Button>
-          <Button
-            variant={"outlined"}
-            startIcon={<Clear/>}
-            onClick={() => formRef.current?.reset()}
-          >
-            {t("common.button.clear")}
-          </Button>
-        </Stack>
       </Grid>
       <Grid size={12}>
         <Stack spacing={2}>
@@ -142,7 +95,7 @@ const BMICalculator = () => {
           </Typography>
         </Stack>
       </Grid>
-    </Grid>
+    </Calculator>
   )
 }
 export default BMICalculator

@@ -1,17 +1,13 @@
 import {useTranslation} from "react-i18next";
-import React, {useRef} from "react";
+import React from "react";
 import {CustomValidator, RJSFSchema, UiSchema} from "@rjsf/utils";
-import RJSFForm from "@/components/rjsf/RJSFForm";
-import validator from "@rjsf/validator-ajv8";
-import {Box, Button, Stack} from "@mui/material";
-import {Calculate, Clear} from "@mui/icons-material";
 import {usePaymentCalculatorContext} from "@/features/financial/PaymentCalculator/index";
+import CalculatorForm from "@/layout/CalculatorForm";
 
 
 const FixedMonthlyPayment = () => {
   const {t} = useTranslation();
   const {setResult} = usePaymentCalculatorContext()
-  const formRef = useRef<any>(null);
   const schema: RJSFSchema = {
     type: "object",
     properties: {
@@ -53,10 +49,7 @@ const FixedMonthlyPayment = () => {
     return errors
   }
 
-  const onCalculate = async () => {
-    const isValid = await formRef.current?.validateForm()
-    if (isValid) {
-      const formData = formRef.current?.state.formData
+  const onCalculate = async (formData: Record<string, any>) => {
       const amount = formData.amount
       const mr = formData.rate / 12 / 100
       const mp = formData.monthlyPayment
@@ -85,39 +78,15 @@ const FixedMonthlyPayment = () => {
         monthlyPayment: mp,
         payments,
       })
-    }
   }
 
   return (
-    <Box>
-      <RJSFForm
-        ref={formRef}
-        schema={schema}
-        uiSchema={uiSchema}
-        validator={validator}
-        customValidate={customValidate}
-      />
-      <Stack
-        sx={{padding: "16px 0"}}
-        spacing={2}
-        direction={"row"}
-      >
-        <Button
-          variant={"contained"}
-          startIcon={<Calculate/>}
-          onClick={onCalculate}
-        >
-          {t("common.button.calculate")}
-        </Button>
-        <Button
-          variant={"outlined"}
-          startIcon={<Clear/>}
-          onClick={() => formRef.current?.reset()}
-        >
-          {t("common.button.clear")}
-        </Button>
-      </Stack>
-    </Box>
+    <CalculatorForm
+      schema={schema}
+      uiSchema={uiSchema}
+      customValidate={customValidate}
+      onCalculate={onCalculate}
+    />
   )
 }
 export default FixedMonthlyPayment

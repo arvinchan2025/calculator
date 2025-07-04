@@ -1,6 +1,9 @@
 {
+  "common.button.share": "分享链接",
   "common.button.calculate": "计算",
   "common.button.clear": "清空",
+  "common.button.copy": "复制链接",
+  "calculator.share.description": "点击下方按钮即可复制链接，粘贴发送给任何人，他们将直接看到你当前的计算结果！",
   "calculator.unit.cm": "厘米",
   "calculator.unit.kg": "公斤",
   "calculator.unit.year": "年",

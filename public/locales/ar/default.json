@@ -1,6 +1,9 @@
 {
+  "common.button.share": "يشارك",
   "common.button.calculate": "احسب",
   "common.button.clear": "واضح",
+  "common.button.copy": "ينسخ",
+  "calculator.share.description": "انقر على الزر أدناه لنسخ الرابط. يمكنك إرساله لأي شخص لمشاركة حسابك الحالي.",
   "calculator.unit.cm": "cm",
   "calculator.unit.kg": "kg",
   "calculator.unit.year": "سنين",
