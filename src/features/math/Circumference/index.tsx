@@ -140,9 +140,12 @@ const CircumferenceCalculator = () => {
           </Stack>
           <Stack spacing={2}>
             <Typography variant={"h2"} sx={{fontSize: "22px", fontWeight: 700}}>
-              How to find the circumference of a circle
+              How to find circumference
             </Typography>
             <Box>
+              <Typography>
+                How to find the circumference of a circle? you can follow the steps below:
+              </Typography>
               <ol>
                 <li>
                   <p>Determine the radius of a circle. Let's assume it's equal to 14 cm.</p>
