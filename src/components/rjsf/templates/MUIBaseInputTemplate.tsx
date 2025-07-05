@@ -19,7 +19,7 @@ const MUIBaseInputTemplate = (props: BaseInputTemplateProps) => {
     return onChange(value === '' ? emptyValue : value);
   }
 
-  console.log("MUIBaseInputTemplate:", props)
+  const suffix: any = uiOptions?.suffix
 
   return (
     <TextField
@@ -29,7 +29,8 @@ const MUIBaseInputTemplate = (props: BaseInputTemplateProps) => {
       required={props.required}
       slotProps={{
         input: {
-          endAdornment: uiOptions?.suffix? <InputAdornment position={"end"}>{`${uiOptions.suffix}`}</InputAdornment>: null,
+          readOnly: props.readonly,
+          endAdornment: suffix? <InputAdornment position={"end"}>{suffix}</InputAdornment>: null,
         }
       }}
       helperText={uiSchema?.["ui:help"]}

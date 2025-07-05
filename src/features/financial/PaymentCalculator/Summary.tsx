@@ -33,7 +33,7 @@ const Summary = (props: Record<string, any>) => {
           borderTop: "1px solid #ccc"
         }}>
           <Typography>{t('payment.paymentMonths')}</Typography>
-          <Typography variant={'h4'}>{`${props.result?.months}`}</Typography>
+          <Typography variant={'h4'}>{`${props.result?.months || 0}`}</Typography>
         </Stack>
       </Grid>
       <Grid size={4}/>

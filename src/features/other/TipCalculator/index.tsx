@@ -1,16 +1,14 @@
 import {useTranslation} from "react-i18next";
-import React, {useState} from "react";
+import React from "react";
 import {RJSFSchema, UiSchema} from "@rjsf/utils";
 import Calculator from "@/layout/Calculator";
 import Grid from "@mui/material/Grid2";
 import CalculatorForm from "@/layout/CalculatorForm";
-import {Stack, TextField} from "@mui/material";
 import ServiceTips from "@/features/other/TipCalculator/ServiceTips";
 
 
 const TipCalculator = () => {
   const {t} = useTranslation();
-  const [bill, setBill] = useState<any>()
   const schema: RJSFSchema = {
     type: "object",
     properties: {
@@ -19,30 +17,54 @@ const TipCalculator = () => {
         title: t('tip.bill'),
         default: 100
       },
-      tip: {
+      tipRate: {
         type: "number",
-        title: t('tip.tip'),
+        title: t('tip.tipRate'),
         default: 15
       },
+      tipAmount: {
+        type: "string",
+        title: t('tip.tipAmount'),
+        default: ''
+      },
+      total: {
+        type: "string",
+        title: t('tip.total'),
+        default: ''
+      },
     },
-    required: ["bill", 'tip'],
+    required: ["bill", 'tipRate'],
   }
 
   const uiSchema: UiSchema = {
-    tip: {
+    tipAmount: {
+      'ui:readonly': true,
+    },
+    tipRate: {
+      'ui:readonly': true,
       'ui:options': {
         suffix: '%'
       }
     },
   }
 
-  const onCalculate = async (formData: any) => {
-    const tip = formData.bill * formData.tip / 100
-    const total = formData.bill + tip
-    setBill({
-      tip,
-      total
-    })
+  const onCalculate = (formData: any) => {
+    if (formData.bill && formData.tipRate) {
+      const tipAmount = formData.bill * formData.tipRate / 100
+      const total = formData.bill + tipAmount
+      return {
+        tipAmount: tipAmount.toFixed(2),
+        total: total.toFixed(2)
+      }
+    }
+    return {tipAmount: '', total: ''}
+  }
+
+  const onChange = (data: any, id?: string) => {
+    if (id === 'root_bill' || id === 'root_tipRate') {
+      return onCalculate(data.formData)
+    }
+    return {}
   }
 
   return (
@@ -55,32 +77,11 @@ const TipCalculator = () => {
           schema={schema}
           uiSchema={uiSchema}
           onCalculate={onCalculate}
+          onChange={onChange}
         />
-        {bill && <Stack spacing={2} sx={{padding: "16px 0"}}>
-            <TextField
-                label={t('tip.tip')}
-                fullWidth
-                value={bill.tip.toFixed(2)}
-                slotProps={{
-                  input: {
-                    readOnly: true
-                  }
-                }}
-            />
-            <TextField
-                label={t('tip.total')}
-                fullWidth
-                value={bill.total.toFixed(2)}
-                slotProps={{
-                  input: {
-                    readOnly: true
-                  }
-                }}
-            />
-        </Stack>}
       </Grid>
       <Grid size={12}>
-        <ServiceTips />
+        <ServiceTips/>
       </Grid>
     </Calculator>
   )

@@ -12,6 +12,7 @@ const HomePage = () => {
     {label: t("payment.calculator"), href: '/loan-payoff-calculator'},
     {label: t("tip.calculator"), href: '/tip-calculator'},
     {label: t("percentOff.calculator"), href: '/percent-off-calculator'},
+    {label: t("circumference.calculator"), href: '/circumference-calculator'},
   ]
   return (
     <Grid container sx={{
@@ -21,13 +22,13 @@ const HomePage = () => {
       justifyContent: "center",
       alignItems: "center"
     }}>
-      <Grid size={12}>
-        <Stack direction={'row'} spacing={2}>
-          {calculators.map((calculator, index) => (
+      <Grid size={12} spacing={2} container>
+        {calculators.map((calculator, index) => (
+          <Grid size={3}>
             <Button
               key={`calculator${index}`}
               sx={{
-                width: '256px',
+                width: '100%',
                 height: '128px',
                 textTransform: 'none'
               }}
@@ -38,8 +39,8 @@ const HomePage = () => {
                 <Typography>{calculator.label}</Typography>
               </Stack>
             </Button>
-          ))}
-        </Stack>
+          </Grid>
+        ))}
       </Grid>
     </Grid>
   )

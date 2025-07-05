@@ -50,13 +50,18 @@ const FixedMonthlyPayment = () => {
   }
 
   const onCalculate = async (formData: Record<string, any>) => {
+    if (formData.amount && formData.rate && formData.monthlyPayment) {
       const amount = formData.amount
       const mr = formData.rate / 12 / 100
       const mp = formData.monthlyPayment
+      if(mp <= amount * mr){
+        setResult(null)
+        return {}
+      }
       const months = Math.log(mp / (mp - amount * mr)) / Math.log(1 + mr)
       const payments = []
       let remainingPrincipal = amount
-      for(let i=1; i<=Math.ceil(months);i++){
+      for (let i = 1; i <= Math.ceil(months); i++) {
         const interest = remainingPrincipal * mr;
         const monthlyPayment = Math.min(mp, (remainingPrincipal + interest))
         const principalPart = monthlyPayment - interest;
@@ -78,6 +83,14 @@ const FixedMonthlyPayment = () => {
         monthlyPayment: mp,
         payments,
       })
+    }else{
+      setResult(null)
+    }
+    return {}
+  }
+
+  const onChange = (data: any) => {
+    return onCalculate(data.formData)
   }
 
   return (
@@ -86,6 +99,7 @@ const FixedMonthlyPayment = () => {
       uiSchema={uiSchema}
       customValidate={customValidate}
       onCalculate={onCalculate}
+      onChange={onChange}
     />
   )
 }

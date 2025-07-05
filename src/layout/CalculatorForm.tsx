@@ -21,14 +21,17 @@ const CalculatorForm = (props: any) => {
     const isValid = await formRef.current?.validateForm()
     if (isValid) {
       const formData = formRef.current?.state.formData
-      await props.onCalculate(formData)
+      const result= await props.onCalculate(formData)
+      setFormData({
+        ...formData,
+        ...result
+      })
     }
   }
   const onShare = async () => {
     const isValid = await formRef.current?.validateForm()
     if (isValid) {
       const formData = formRef.current?.state.formData
-      console.log("onShare:", JSON.stringify(formData))
       const encodeFormData = btoa(encodeURIComponent(JSON.stringify(formData)))
       setShare({open: true, link: `https://calculator-now$.com{location.pathname}?result=${encodeFormData}`})
     }
@@ -42,8 +45,12 @@ const CalculatorForm = (props: any) => {
     const resultParam = searchParams.get('result')
     const result = resultParam && decodeURIComponent(atob(resultParam))
     if(result){
-      setFormData(JSON.parse(result))
-      onCalculate().then()
+      const formData = JSON.parse(result)
+      const ret = props.onCalculate(formData)
+      setFormData({
+        ...formData,
+        ...ret
+      })
     }
   }, [searchParams])
 
@@ -56,7 +63,17 @@ const CalculatorForm = (props: any) => {
         customValidate={props.customValidate}
         validator={validator}
         formData={formData}
-        onChange={(e) => setFormData(e.formData)}
+        onChange={(data, id) => {
+          if(props.onChange){
+            const result = props.onChange(data, id)
+            setFormData({
+              ...data.formData,
+              ...result
+            })
+          }else{
+            setFormData(data.formData)
+          }
+        }}
       />
       <Stack
         sx={{padding: "16px 0", width: '100%'}}

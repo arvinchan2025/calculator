@@ -15,20 +15,28 @@ const BMICalculator = () => {
   const schema: RJSFSchema = {
     type: "object",
     properties: {
+      height: {
+        type: "number",
+        title: t('bmi.height')
+      },
       weight: {
         type: "number",
         title: t('bmi.weight')
       },
-      height: {
-        type: "number",
-        title: t('bmi.height')
+      bmi: {
+        type: "string",
+        title: t('bmi.bmi')
+      },
+      bmiPrime: {
+        type: "string",
+        title: t('bmi.bmiPrime')
       }
     },
     required: ['weight', 'height'],
   }
 
   const uiSchema: UiSchema = {
-    'ui:ObjectFieldTemplate': CustomObjectFieldTemplate,
+    // 'ui:ObjectFieldTemplate': CustomObjectFieldTemplate,
     height: {
       'ui:options': {
         suffix: t("calculator.unit.cm")
@@ -37,6 +45,18 @@ const BMICalculator = () => {
     weight: {
       'ui:options': {
         suffix: t("calculator.unit.kg")
+      }
+    },
+    bmi: {
+      'ui:readonly': true,
+      'ui:options': {
+        suffix: <Typography>kg/cm<sup>2</sup></Typography>
+      }
+    },
+    bmiPrime: {
+      'ui:readonly': true,
+      'ui:options': {
+        suffix: <Typography>BMI/25</Typography>
       }
     }
   }
@@ -62,19 +82,27 @@ const BMICalculator = () => {
     }
   }
 
-  const onCalculate = async (formData: any) => {
-    const height = formData?.height / 100
-    const bmi = (formData.weight / (height * height))
-    const bmiPrime = (bmi / 25)
-    const checked = getBMILevel(bmi)
-    setResult({
-      bmi: bmi,
-      bmiPrime: bmiPrime,
-      ...checked
-    })
+  const onCalculate = (formData: any) => {
+    if (formData?.height && formData.weight) {
+      const height = formData?.height / 100
+      const bmi = (formData.weight / (height * height))
+      const bmiPrime = (bmi / 25)
+      // const result = getBMILevel(bmi)
+      // setResult(result)
+      return {
+        bmi: bmi.toFixed(1),
+        bmiPrime: bmiPrime.toFixed(1),
+      }
+    }
+    return {bmi: '', bmiPrime: ''}
   }
 
-  // BMI = {bmi} kg/m<sup>2</sup> ({getBMILevel()})
+  const onChange = (data: any, id?: string) => {
+    if (id === 'root_height' || id === 'root_weight') {
+      return onCalculate(data.formData)
+    }
+    return {}
+  }
 
   return (
     <Calculator
@@ -86,35 +114,8 @@ const BMICalculator = () => {
           schema={schema}
           uiSchema={uiSchema}
           onCalculate={onCalculate}
+          onChange={onChange}
         />
-        {result &&
-            <Stack spacing={2} sx={{padding: "16px 0"}}>
-                <Typography variant={'h5'} color={result.lv}>{result.label}</Typography>
-                <TextField
-                    label={t('bmi.bmi')}
-                    fullWidth
-                    value={result.bmi.toFixed(1)}
-                    slotProps={{
-                      input: {
-                        readOnly: true,
-                        endAdornment: <Typography>kg/m<sup>2</sup></Typography>
-                      }
-                    }}
-                />
-                <TextField
-                    label={t('bmi.bmiPrime')}
-                    fullWidth
-                    value={result.bmiPrime.toFixed(1)}
-                    slotProps={{
-                      input: {
-                        readOnly: true,
-                        endAdornment: <Typography>BMI/25</Typography>
-                      }
-                    }}
-                />
-            </Stack>
-
-        }
       </Grid>
       <Grid size={12}>
         <Stack spacing={2}>

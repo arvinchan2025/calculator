@@ -44,35 +44,44 @@ const FixedTerm = () => {
   }
 
   const onCalculate = async (formData: Record<string, any>) => {
-    const amount = formData.amount
-    const monthlyRate = formData.rate / 12 / 100
-    const months = formData.term * 12
-    const numerator = monthlyRate * Math.pow(1 + monthlyRate, months);
-    const denominator = Math.pow(1 + monthlyRate, months) - 1;
-    const monthlyPayment = amount * (numerator / denominator)
-    let remainingPrincipal = amount
-    const payments = []
-    for (let i = 1; i <= months; i++) {
-      const interest = remainingPrincipal * monthlyRate;
-      const principalPart = monthlyPayment - interest;
-      remainingPrincipal -= principalPart;
-      payments.push({
-        month: i,
-        monthlyPayment: monthlyPayment.toFixed(2),
-        principal: principalPart.toFixed(2),
-        interest: interest.toFixed(2),
-        remainingPrincipal: remainingPrincipal > 0 ? remainingPrincipal.toFixed(2) : '0.00'
+    if (formData.amount && formData.rate && formData.term) {
+      const amount = formData.amount
+      const monthlyRate = formData.rate / 12 / 100
+      const months = formData.term * 12
+      const numerator = monthlyRate * Math.pow(1 + monthlyRate, months);
+      const denominator = Math.pow(1 + monthlyRate, months) - 1;
+      const monthlyPayment = amount * (numerator / denominator)
+      let remainingPrincipal = amount
+      const payments = []
+      for (let i = 1; i <= months; i++) {
+        const interest = remainingPrincipal * monthlyRate;
+        const principalPart = monthlyPayment - interest;
+        remainingPrincipal -= principalPart;
+        payments.push({
+          month: i,
+          monthlyPayment: monthlyPayment.toFixed(2),
+          principal: principalPart.toFixed(2),
+          interest: interest.toFixed(2),
+          remainingPrincipal: remainingPrincipal > 0 ? remainingPrincipal.toFixed(2) : '0.00'
+        })
+      }
+      setResult({
+        amount: amount,
+        months,
+        years: formData.term,
+        totalAmount: (monthlyPayment * months),
+        totalInterest: (monthlyPayment * months - amount),
+        monthlyPayment,
+        payments,
       })
+    }else{
+      setResult(null)
     }
-    setResult({
-      amount: amount,
-      months,
-      years: formData.term,
-      totalAmount: (monthlyPayment * months),
-      totalInterest: (monthlyPayment * months - amount),
-      monthlyPayment,
-      payments,
-    })
+    return {}
+  }
+
+  const onChange = (data: any) => {
+    return onCalculate(data.formData)
   }
 
   return (
@@ -80,6 +89,7 @@ const FixedTerm = () => {
       schema={schema}
       uiSchema={uiSchema}
       onCalculate={onCalculate}
+      onChange={onChange}
     />
   )
 }

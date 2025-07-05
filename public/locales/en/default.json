@@ -43,12 +43,19 @@
   "tip.calculator": "Tip Calculator",
   "tip.calculator.description": "The Tip Calculator calculates tip amount for various percentages of the cost of the service, and also provides a total amount that includes the tip. In the U.S., a tip of 15% of the before tax meal price is typically expected.",
   "tip.bill": "Tip Bill",
-  "tip.tip": "Tip",
+  "tip.tipRate": "Tip",
+  "tip.tipAmount": "Tip",
   "tip.total": "Total",
   "percentOff.calculator": "Percent Off Caculator",
   "percentOff.calculator.description": "A percent off of a product or service is a common discount format. A percent off of a product means that the price of the product is reduced by that percen",
   "percentOff.price": "Price",
   "percentOff.discount": "Percent Off",
   "percentOff.finalPrice": "Final Price",
-  "percentOff.saved": "Saved"
+  "percentOff.saved": "Saved",
+  "circumference.calculator": "Circumference Calculator",
+  "circumference.calculator.description": "If you need to solve some geometry exercises, this circumference calculator is the page for you. It is a tool specifically created to find the diameter, circumference, and area of any circle",
+  "circumference.radius": "Radius",
+  "circumference.diameter": "Diameter",
+  "circumference.circumference": "Circumference",
+  "circumference.area": "Area"
 }

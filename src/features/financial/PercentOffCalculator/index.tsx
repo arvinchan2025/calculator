@@ -4,7 +4,6 @@ import {RJSFSchema, UiSchema} from "@rjsf/utils";
 import Calculator from "@/layout/Calculator";
 import Grid from "@mui/material/Grid2";
 import CalculatorForm from "@/layout/CalculatorForm";
-import {Stack, TextField} from "@mui/material";
 
 
 const PercentOffCalculator = () => {
@@ -23,6 +22,14 @@ const PercentOffCalculator = () => {
         title: t('percentOff.discount'),
         default: 15
       },
+      finalPrice: {
+        type: "string",
+        title: t('percentOff.finalPrice'),
+      },
+      saved: {
+        type: "string",
+        title: t('percentOff.saved'),
+      },
     },
     required: ["price", 'discount'],
   }
@@ -35,13 +42,23 @@ const PercentOffCalculator = () => {
     },
   }
 
-  const onCalculate = async (formData: any) => {
-    const saved = formData.price * formData.discount / 100
-    const finalPrice = formData.price - saved
-    setResult({
-      finalPrice,
-      saved
-    })
+  const onCalculate = (formData: any) => {
+    if (formData.price && formData.discount) {
+      const saved = formData.price * formData.discount / 100
+      const finalPrice = formData.price - saved
+      return {
+        saved: saved.toFixed(2),
+        finalPrice: finalPrice.toFixed(2)
+      }
+    }
+    return {saved: '', finalPrice: ''}
+  }
+
+  const onChange = (data: any, id?: string) => {
+    if (id === 'root_price' || id === 'root_discount') {
+      return onCalculate(data.formData)
+    }
+    return {}
   }
 
   return (
@@ -54,29 +71,8 @@ const PercentOffCalculator = () => {
           schema={schema}
           uiSchema={uiSchema}
           onCalculate={onCalculate}
+          onChange={onChange}
         />
-        {result && <Stack spacing={2} sx={{padding: "16px 0"}}>
-            <TextField
-                label={t('percentOff.finalPrice')}
-                fullWidth
-                value={result.finalPrice.toFixed(2)}
-                slotProps={{
-                  input: {
-                    readOnly: true
-                  }
-                }}
-            />
-            <TextField
-                label={t('percentOff.saved')}
-                fullWidth
-                value={result.saved.toFixed(2)}
-                slotProps={{
-                  input: {
-                    readOnly: true
-                  }
-                }}
-            />
-        </Stack>}
       </Grid>
     </Calculator>
   )
