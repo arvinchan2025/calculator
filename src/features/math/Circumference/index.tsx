@@ -1,5 +1,5 @@
 import {useTranslation} from "react-i18next";
-import React, {useState} from "react";
+import React from "react";
 import {RJSFSchema, UiSchema} from "@rjsf/utils";
 import Calculator from "@/layout/Calculator";
 import CalculatorForm from "@/layout/CalculatorForm";
@@ -9,32 +9,26 @@ import {Box, Stack, Typography} from "@mui/material";
 
 const CircumferenceCalculator = () => {
   const {t} = useTranslation();
-  const [result, setResult] = useState<any>()
   const schema: RJSFSchema = {
     type: "object",
     properties: {
       radius: {
-        type: "number",
+        type: "string",
         title: t('circumference.radius'),
-        default: 0
       },
       diameter: {
-        type: "number",
+        type: "string",
         title: t('circumference.diameter'),
-        default: 0,
       },
       circumference: {
         type: "string",
         title: t('circumference.circumference'),
-        default: '0'
       },
       area: {
         type: "string",
         title: t('circumference.area'),
-        default: '0'
       },
-    },
-    required: ["radius"],
+    }
   }
 
   const uiSchema: UiSchema = {
@@ -49,43 +43,91 @@ const CircumferenceCalculator = () => {
       }
     },
     circumference: {
-      'ui:readonly': true,
+      // 'ui:readonly': true,
       'ui:options': {
         suffix: 'cm',
         readOnly: true
       }
     },
     area: {
-      'ui:readonly': true,
+      // 'ui:readonly': true,
       'ui:options': {
         suffix: <Typography>cm<sup>2</sup></Typography>
       }
     },
   }
 
-  const onCalculate = async (formData: any) => {
-    const radius = formData.radius || 0
-    return {
-      diameter: 2 * radius,
-      circumference: (2 * Math.PI * radius).toFixed(5),
-      area: (Math.PI * radius * radius).toFixed(5)
+  const formatMaxDecimals = (value: number, maxDecimals: number = 6) => {
+    return parseFloat(value.toFixed(maxDecimals)).toString();
+  }
+
+  const calculation = (formData: any, field: string) => {
+    let radius = 0
+    switch (field) {
+      case 'radius':
+        if(!formData.radius){
+          return
+        }
+        radius = parseFloat(formData.radius || '0')
+        return {
+          diameter: formatMaxDecimals(2 * radius),
+          circumference: formatMaxDecimals(2 * Math.PI * radius),
+          area: formatMaxDecimals(Math.PI * radius * radius)
+        }
+      case 'diameter':
+        if(!formData.diameter){
+          return
+        }
+        radius = parseFloat(formData.diameter) / 2
+        return {
+          radius: formatMaxDecimals(radius),
+          circumference: formatMaxDecimals(2 * Math.PI * radius),
+          area: formatMaxDecimals(Math.PI * radius * radius)
+        }
+      case 'circumference':
+        if(!formData.circumference){
+          return
+        }
+        radius = parseFloat((parseFloat(formData.circumference) / Math.PI / 2).toFixed(6))
+        return {
+          radius: formatMaxDecimals(radius),
+          diameter: formatMaxDecimals(2 * radius),
+          area: formatMaxDecimals(Math.PI * radius * radius)
+        }
+      case 'area':
+        if(!formData.area){
+          return
+        }
+        radius = parseFloat(Math.sqrt(parseFloat(formData.area) / Math.PI).toFixed(6))
+        return {
+          radius: formatMaxDecimals(radius),
+          diameter: formatMaxDecimals(2 * radius),
+          circumference: formatMaxDecimals(2 * Math.PI * radius),
+        }
+      default:
+        return {}
     }
   }
 
+  const onCalculate = (formData: any) => {
+    if (formData.radius) {
+      return calculation(formData, 'radius')
+    } else if (formData.diameter) {
+      return calculation(formData, 'diameter')
+    } else if (formData.circumference) {
+      return calculation(formData, 'circumference')
+    } else if (formData.area) {
+      return calculation(formData, 'area')
+    } else {
+      return {}
+    }
+  }
+
+
   const onChange = (data: any, id?: string) => {
     const formData = data.formData
-    if (id === 'root_radius') {
-      const radius = formData.radius || 0
-      return onCalculate({...formData, radius})
-    } else if (id === 'root_diameter') {
-      const radius = formData.diameter / 2
-      const result = onCalculate({...formData, radius})
-      return {
-        radius,
-        ...result
-      }
-    }
-    return data.formData
+    const field = id?.replace('root_', '') || 'radius'
+    return calculation(formData, field)
   }
 
   return (
