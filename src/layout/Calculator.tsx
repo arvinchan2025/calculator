@@ -23,7 +23,13 @@ const Calculator = (props: Record<string, any>) => {
       </Grid>
       <Grid size={12}>
         <Card sx={{boxShadow: 'none', backgroundColor: 'inherit'}}>
-          <CardHeader title={props.title} subheader={props.description}/>
+          <CardHeader
+            title={<Typography
+              variant={'h1'}
+              sx={{fontSize: '22px', fontWeight: 'bold'}}
+            >{props.title}</Typography>}
+            subheader={props.description}
+          />
           <CardContent>
             <Grid container>
               {props.children}
