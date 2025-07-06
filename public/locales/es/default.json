@@ -8,6 +8,8 @@
   "calculator.unit.kg": "kg",
   "calculator.unit.year": "años",
   "calculator.home": "Hogar",
+  "bmi.pageTitle": "",
+  "bmi.pageDescription": "",
   "bmi.weight": "peso",
   "bmi.height": "altura",
   "bmi.severeThinness": "Emaciación severa",
@@ -21,6 +23,8 @@
   "bmi.calculator": "BMI Calcurato",
   "bmi.introduction": "",
   "bmi.introduction.content": "",
+  "payment.pageTitle": "Calculadora de Pago de Préstamos – Planifica tu salida de deudas",
+  "payment.pageDescription": "Calcula el tiempo de pago, las cuotas mensuales y los intereses totales de tu préstamo. Optimiza tu plan de pagos con esta herramienta gratuita.",
   "payment.calculator": "Calculadora de amortización de préstamos",
   "payment.fixedTerm": "Plazo fijo",
   "payment.fixedPayment": "Pago fijo",
@@ -35,5 +39,11 @@
   "payment.monthlyPayment": "Pago Mensual",
   "payment.paymentMonths": "Meses de pago",
   "payment.totalInterestPaid": "Interés total pagado",
-  "payment.totalPaid": "Total a pagar"
+  "payment.totalPaid": "Total a pagar",
+  "tip.pageTitle": "Calculadora de Propinas – Calcula propinas rápida y justamente",
+  "tip.pageDescription": "Calcula al instante cuánto debes dejar de propina en restaurantes. Divide fácilmente la cuenta entre varias personas.",
+  "percentOff.pageTitle": "Calculadora de Descuento – Encuentra precios rebajados rápidamente",
+  "percentOff.pageDescription": "Calcula fácilmente cuánto ahorras durante las rebajas. Solo ingresa el precio original y el porcentaje de descuento.",
+  "circumference.pageTitle": "Calculadora de Circunferencia – Calcula el perímetro de un círculo",
+  "circumference.pageDescription": "Ingresa el radio o el diámetro para calcular al instante la circunferencia de un círculo. Ideal para matemáticas o tareas escolares."
 }

@@ -63,6 +63,8 @@ const PercentOffCalculator = () => {
 
   return (
     <Calculator
+      pageTitle={t('percentOff.pageTitle')}
+      pageDescription={t('percentOff.pageDescription')}
       title={t('percentOff.calculator')}
       description={t('percentOff.calculator.description')}
     >

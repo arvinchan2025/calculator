@@ -69,6 +69,8 @@ const TipCalculator = () => {
 
   return (
     <Calculator
+      pageTitle={t('tip.pageTitle')}
+      pageDescription={t('tip.pageDescription')}
       title={t('tip.calculator')}
       description={t('tip.calculator.description')}
     >

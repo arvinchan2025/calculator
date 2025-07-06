@@ -49,6 +49,8 @@ const PaymentCalculator = () => {
       }}
     >
       <Calculator
+        pageTitle={t('payment.pageTitle')}
+        pageDescription={t('payment.pageDescription')}
         title={t('payment.calculator')}
         description={t('payment.calculator.description')}
       >

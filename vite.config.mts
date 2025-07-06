@@ -9,6 +9,9 @@ export default () => {
   return defineConfig({
     optimizeDeps: {
       include: ["src/**/*.tsx"],
+      // exclude: [
+      //   'react-helmet'
+      // ]
     },
 
     plugins: [

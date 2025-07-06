@@ -132,6 +132,8 @@ const CircumferenceCalculator = () => {
 
   return (
     <Calculator
+      pageTitle={t('circumference.pageTitle')}
+      pageDescription={t('circumference.pageDescription')}
       title={t('circumference.calculator')}
       description={t('circumference.calculator.description')}
     >

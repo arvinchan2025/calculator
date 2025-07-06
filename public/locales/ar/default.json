@@ -8,6 +8,8 @@
   "calculator.unit.kg": "kg",
   "calculator.unit.year": "سنين",
   "calculator.home": "بيت",
+  "bmi.pageTitle": "",
+  "bmi.pageDescription": "",
   "bmi.weight": "وزن",
   "bmi.height": "ارتفاع",
   "bmi.severeThinness": "فقدان الوزن الشديد",
@@ -21,6 +23,8 @@
   "bmi.calculator": "BMI آلة حاسبة",
   "bmi.introduction": "",
   "bmi.introduction.content": "",
+  "payment.pageTitle": "حاسبة سداد القروض – خطط لرحلتك نحو التخلص من الديون",
+  "payment.pageDescription": "احسب مدة السداد، الأقساط الشهرية، وإجمالي الفوائد. حسِّن إستراتيجية السداد باستخدام هذه الأداة المجانية.",
   "payment.calculator": "حاسبة سداد القروض",
   "payment.fixedTerm": "مدة محددة",
   "payment.fixedPayment": "الدفع الثابت",
@@ -35,5 +39,11 @@
   "payment.monthlyPayment": "الدفع الشهري",
   "payment.paymentMonths": "أشهر الدفع",
   "payment.totalInterestPaid": "إجمالي الفوائد المدفوعة",
-  "payment.totalPaid": "الإجمالي المستحق الدفع"
+  "payment.totalPaid": "الإجمالي المستحق الدفع",
+  "tip.pageTitle": "حاسبة الإكرامية – احسب الإكرامية بسرعة وبشكل عادل",
+  "tip.pageDescription": "احسب فورًا مقدار الإكرامية في المطاعم. قسم الفاتورة والإكرامية بسهولة بين عدة أشخاص.",
+  "percentOff.pageTitle": "حاسبة الخصم – احسب السعر بعد الخصم بسرعة",
+  "percentOff.pageDescription": "احسب بسهولة كم ستوفر أثناء التخفيضات. فقط أدخل السعر الأصلي ونسبة الخصم للحصول على السعر النهائي.",
+  "circumference.pageTitle": "حاسبة محيط الدائرة – احسب محيط الدائرة بسهولة",
+  "circumference.pageDescription": "أدخل نصف القطر أو القطر لحساب محيط الدائرة فورًا. مثالي للرياضيات أو الواجبات المدرسية."
 }
