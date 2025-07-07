@@ -13,12 +13,6 @@
         <changefreq>weekly</changefreq>
     </url>
     <url>
-        <loc>https://calculator-now.com/home</loc>
-        <priority>0.3</priority>
-        <lastmod>2025-07-05</lastmod>
-        <changefreq>weekly</changefreq>
-    </url>
-    <url>
         <loc>https://calculator-now.com/bim-calculator</loc>
         <priority>0.3</priority>
         <lastmod>2025-07-06</lastmod>

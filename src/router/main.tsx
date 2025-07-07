@@ -14,8 +14,7 @@ const MainRouter = () => {
   return useRoutes([{
     path: "/", element: <MainLayout/>, children: [
       // {index: true, element: <Navigate to={'bmi-calculator'} />},
-      {index: true, element: <Navigate to={'home'}/>},
-      {path: 'home', element: <HomePage/>},
+      {index: true, element: <HomePage />},
       {path: 'bmi-calculator', element: <BMICalculator/>},
       {path: 'loan-payoff-calculator', element: <PaymentCalculator/>},
       {path: 'tip-calculator', element: <TipCalculator/>},

@@ -25,7 +25,7 @@ const Calculator = (props: Record<string, any>) => {
             <Link
               underline="hover"
               color="inherit"
-              href="/home"
+              href="/"
             >
               {t('calculator.home')}
             </Link>
