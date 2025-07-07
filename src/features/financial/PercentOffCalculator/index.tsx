@@ -4,6 +4,7 @@ import {RJSFSchema, UiSchema} from "@rjsf/utils";
 import Calculator from "@/layout/Calculator";
 import Grid from "@mui/material/Grid2";
 import CalculatorForm from "@/layout/CalculatorForm";
+import {Stack, Typography} from "@mui/material";
 
 
 const PercentOffCalculator = () => {
@@ -75,6 +76,34 @@ const PercentOffCalculator = () => {
           onCalculate={onCalculate}
           onChange={onChange}
         />
+      </Grid>
+      <Grid size={12}>
+        <Stack spacing={4}>
+          <Stack spacing={2} component={"section"}>
+            <Typography variant={'h2'}>
+              Why Use a Percent Off Calculator?
+            </Typography>
+            <Typography variant={'body1'}>
+              This tool helps you instantly find out how much you save during discounts or sales, and calculate the final price.
+            </Typography>
+          </Stack>
+          <Stack spacing={2} component={"section"}>
+            <Typography variant={'h2'}>
+              How to Use a Percent Off Calculator?
+            </Typography>
+            <Typography variant={'body1'}>
+              Enter the price and percent off to get the final price and saved money.
+            </Typography>
+          </Stack>
+          <Stack spacing={2} component={"section"}>
+            <Typography variant={'h2'}>
+              Example
+            </Typography>
+            <Typography variant={'body1'}>
+              Original price $120, 25% off — you save $30, pay $90.
+            </Typography>
+          </Stack>
+        </Stack>
       </Grid>
     </Calculator>
   )

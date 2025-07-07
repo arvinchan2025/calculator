@@ -5,6 +5,7 @@ import Calculator from "@/layout/Calculator";
 import Grid from "@mui/material/Grid2";
 import CalculatorForm from "@/layout/CalculatorForm";
 import ServiceTips from "@/features/other/TipCalculator/ServiceTips";
+import {Stack, Typography} from "@mui/material";
 
 
 const TipCalculator = () => {
@@ -83,7 +84,31 @@ const TipCalculator = () => {
         />
       </Grid>
       <Grid size={12}>
-        <ServiceTips/>
+        <Stack spacing={4}>
+          <Stack spacing={2} component={"section"}>
+            <Typography variant={"h2"}>
+              Why Use a Tip Calculator?
+            </Typography>
+            <Typography variant={"body1"}>
+              It ensures you tip fairly based on your total bill and service quality. It also helps split bills among
+              multiple people easily.
+            </Typography>
+          </Stack>
+          <Stack spacing={2} component={"section"}>
+            <Typography variant={"h2"}>
+              Example
+            </Typography>
+            <Typography variant={"body1"}>
+              Your total is $75 and you want to tip 15%. That’s $11.25 and total is $86.25.
+            </Typography>
+          </Stack>
+          <Stack spacing={2} component={"section"}>
+            <Typography variant={"h2"}>
+              Service & Typical Tip
+            </Typography>
+            <ServiceTips/>
+          </Stack>
+        </Stack>
       </Grid>
     </Calculator>
   )

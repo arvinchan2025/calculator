@@ -147,7 +147,7 @@ const CircumferenceCalculator = () => {
       </Grid>
       <Grid size={12} sx={{pt: 2}}>
         <Stack spacing={2}>
-          <Stack spacing={2}>
+          <Stack spacing={2} component={"section"}>
             <Typography variant={"h2"} sx={{fontSize: "22px", fontWeight: 700}}>
               How to use the circumference calculator
             </Typography>
@@ -171,7 +171,7 @@ const CircumferenceCalculator = () => {
               of pi (π).
             </Typography>
           </Stack>
-          <Stack spacing={2}>
+          <Stack spacing={2} component={"section"}>
             <Typography variant={"h2"} sx={{fontSize: "22px", fontWeight: 700}}>
               Definition of circumference
             </Typography>
@@ -179,10 +179,10 @@ const CircumferenceCalculator = () => {
               The circumference of a circle is the length of the circle's boundary. It is the same as the perimeter of a
               geometric figure, but the term 'perimeter' is used exclusively for polygons.
 
-              Circumference is often misspelled as circumfrence.
+              Circumference is often misspelled as circumference.
             </Typography>
           </Stack>
-          <Stack spacing={2}>
+          <Stack spacing={2} component={"section"}>
             <Typography variant={"h2"} sx={{fontSize: "22px", fontWeight: 700}}>
               How to find circumference
             </Typography>

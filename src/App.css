@@ -36,3 +36,13 @@
     transform: rotate(360deg);
   }
 }
+
+section .MuiTypography-h2 {
+  font-size: 22px;
+  font-weight: 500;
+}
+
+section .MuiTypography-h3 {
+  font-size: 16px;
+  font-weight: 500;
+}

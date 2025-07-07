@@ -120,13 +120,34 @@ const BMICalculator = () => {
         />
       </Grid>
       <Grid size={12}>
-        <Stack spacing={2}>
-          <Typography variant={"h4"}>
-            {t("bmi.introduction")}
-          </Typography>
-          <Typography variant={"body1"}>
-            {t("bmi.introduction.content")}
-          </Typography>
+        <Stack spacing={4}>
+          <Stack spacing={2} component={"section"}>
+            <Typography variant={"h2"}>
+              {t("bmi.introduction")}
+            </Typography>
+            <Typography variant={"body1"}>
+              {t("bmi.introduction.content")}
+            </Typography>
+          </Stack>
+          <Stack spacing={2} component={"section"}>
+            <Typography variant={"h2"}>
+              How to Use BMI Calculator
+            </Typography>
+            <Typography variant={"body1"}>
+              Enter your height and weight, click calculate. Our BMI calculator gives you your BMI instantly.
+            </Typography>
+          </Stack>
+          <Stack spacing={2} component={"section"}>
+            <Typography variant={"h2"}>
+              FAQ
+            </Typography>
+            <Typography variant={"h3"}>
+              What is a normal BMI?
+            </Typography>
+            <Typography variant={"body1"}>
+              Normal BMI range is 18.5–24.9. Below or above may indicate underweight or overweight.
+            </Typography>
+          </Stack>
         </Stack>
       </Grid>
     </Calculator>
