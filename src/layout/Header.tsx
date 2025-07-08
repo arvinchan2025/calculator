@@ -21,7 +21,7 @@ const Header = () => {
           }}
           direction={"row"}
           spacing={0.5}
-          href={'/home'}
+          href={'/'}
         >
           <img
             width="24px"
