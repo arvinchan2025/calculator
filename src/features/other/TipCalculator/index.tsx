@@ -70,6 +70,7 @@ const TipCalculator = () => {
 
   return (
     <Calculator
+      category={'CalculationApplication'}
       pageTitle={t('tip.pageTitle')}
       pageDescription={t('tip.pageDescription')}
       title={t('tip.calculator')}

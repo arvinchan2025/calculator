@@ -132,6 +132,7 @@ const CircumferenceCalculator = () => {
 
   return (
     <Calculator
+      category={'MathApplication'}
       pageTitle={t('circumference.pageTitle')}
       pageDescription={t('circumference.pageDescription')}
       title={t('circumference.calculator')}

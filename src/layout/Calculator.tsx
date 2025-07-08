@@ -18,17 +18,18 @@ const Calculator = (props: Record<string, any>) => {
           <meta property={'og:description'} content={props.pageDescription}></meta>
           <meta property={'og:url'} content={`https://calculator-now.com${location.pathname}`}></meta>
           <meta property={'og:type'} content={'website'}></meta>
-          {/*<script type="application/ld+json">*/}
-          {/*  {*/}
-          {/*    "@context": "https://schema.org",*/}
-          {/*    "@type": "WebApplication",*/}
-          {/*    "name": "BMI Calculator",*/}
-          {/*    "description": "Free BMI Calculator to evaluate your Body Mass Index based on your height and weight.",*/}
-          {/*    "applicationCategory": "HealthApplication",*/}
-          {/*    "operatingSystem": "All",*/}
-          {/*    "url": "https://calculator-now.com/bmi-calculator"*/}
-          {/*  }*/}
-          {/*</script>*/}
+          <script type="application/ld+json">
+            {`{
+              "@context": "https://schema.org",
+              "@type": "WebApplication",
+              "name": "${props.pageTitle}",
+              "description": "${props.pageDescription}",
+              "applicationCategory": "${props.category}",
+              "operatingSystem": "All",
+              "url": "https://calculator-now.com${location.pathname}"
+              }`
+            }
+          </script>
       </Helmet>}
       <Grid container spacing={2}>
         <Grid size={12} sx={{padding: "0 16px"}}>

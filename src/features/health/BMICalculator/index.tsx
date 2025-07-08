@@ -106,6 +106,7 @@ const BMICalculator = () => {
 
   return (
     <Calculator
+      category={'HealthApplication'}
       pageTitle={t('bmi.pageTitle')}
       pageDescription={t('bmi.pageDescription')}
       title={t('bmi.calculator')}

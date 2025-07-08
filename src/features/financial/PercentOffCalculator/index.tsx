@@ -64,6 +64,7 @@ const PercentOffCalculator = () => {
 
   return (
     <Calculator
+      category={"FinancialApplication"}
       pageTitle={t('percentOff.pageTitle')}
       pageDescription={t('percentOff.pageDescription')}
       title={t('percentOff.calculator')}
