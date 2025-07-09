@@ -8,6 +8,7 @@ const PaymentCalculator = lazy(() => import("@/features/financial/PaymentCalcula
 const TipCalculator = lazy(() => import("@/features/other/TipCalculator"))
 const PercentOffCalculator = lazy(() => import("@/features/financial/PercentOffCalculator"))
 const CircumferenceCalculator = lazy(() => import("@/features/math/Circumference"))
+const PeptideCalculator = lazy(() => import("@/features/medicine/PeptideCalculator"))
 
 
 const MainRouter = () => {
@@ -19,7 +20,8 @@ const MainRouter = () => {
       {path: 'loan-payoff-calculator', element: <PaymentCalculator/>},
       {path: 'tip-calculator', element: <TipCalculator/>},
       {path: 'percent-off-calculator', element: <PercentOffCalculator/>},
-      {path: 'circumference-calculator', element: <CircumferenceCalculator/>}
+      {path: 'circumference-calculator', element: <CircumferenceCalculator/>},
+      {path: 'peptide-calculator', element: <PeptideCalculator/>}
     ]
   }])
 }

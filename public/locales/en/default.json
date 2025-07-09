@@ -67,5 +67,8 @@
   "circumference.radius": "Radius",
   "circumference.diameter": "Diameter",
   "circumference.circumference": "Circumference",
-  "circumference.area": "Area"
+  "circumference.area": "Area",
+  "peptide.calculator": "Peptide Calculator",
+  "peptide.sequence": "Sequence",
+  "peptide.pi": "Isoelectric Point(pI)"
 }

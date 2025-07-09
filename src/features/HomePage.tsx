@@ -13,6 +13,7 @@ const HomePage = () => {
     {label: t("tip.calculator"), href: '/tip-calculator'},
     {label: t("percentOff.calculator"), href: '/percent-off-calculator'},
     {label: t("circumference.calculator"), href: '/circumference-calculator'},
+    {label: t("peptide.calculator"), href: '/peptide-calculator'},
   ]
   return (
     <Grid container sx={{

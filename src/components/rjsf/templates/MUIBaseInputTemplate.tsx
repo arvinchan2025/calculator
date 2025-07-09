@@ -27,6 +27,7 @@ const MUIBaseInputTemplate = (props: BaseInputTemplateProps) => {
       label={props.label}
       value={props.value || ''}
       required={props.required}
+      placeholder={props.placeholder}
       slotProps={{
         input: {
           readOnly: props.readonly,

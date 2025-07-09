@@ -27,6 +27,7 @@ const Footer = () => {
             <Link href={'/tip-calculator'}>{t('tip.calculator')}</Link>
             <Link href={'/percent-off-calculator'}>{t('percentOff.calculator')}</Link>
             <Link href={'/circumference-calculator'}>{t('circumference.calculator')}</Link>
+            <Link href={'/peptide-calculator'}>{t('peptide.calculator')}</Link>
           </Stack>
         </Box>
       </Stack>

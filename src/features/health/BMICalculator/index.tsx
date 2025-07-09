@@ -1,6 +1,5 @@
-import {Stack, TextField, Typography} from "@mui/material";
+import {Stack, Typography} from "@mui/material";
 import {RJSFSchema, UiSchema} from "@rjsf/utils";
-import CustomObjectFieldTemplate from "./ObjectFieldTemplate";
 import React, {useRef, useState} from "react";
 import Grid from "@mui/material/Grid2";
 import {useTranslation} from "react-i18next";
