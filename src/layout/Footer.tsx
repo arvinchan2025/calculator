@@ -15,6 +15,9 @@ const Footer = () => {
       {label: t('percentOff.calculator'), href: '/percent-off-calculator'},
       {label: t('circumference.calculator'), href: '/circumference-calculator'},
       {label: t('peptide.calculator'), href: '/peptide-calculator'},
+    ],
+    [
+      {label: t('asphaltTonnage.calculator'), href: '/asphalt-tonnage-calculator'},
     ]
   ]
   return (
