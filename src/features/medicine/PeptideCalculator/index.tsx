@@ -97,12 +97,10 @@ const PeptideCalculator = () => {
   return (
     <Calculator
       category={'MedicineApplication'}
-      pageTitle={'Peptide Calculator'}
-      pageDescription={'A Peptide Calculator typically helps you compute properties of a peptide based on its amino acid sequence.'}
       title={'Peptide Calculator'}
       description={'A Peptide Calculator typically helps you compute properties of a peptide based on its amino acid sequence.'}
     >
-      <Grid size={6}>
+      <Grid size={{xs: 12, md: 6}}>
         <CalculatorForm
           schema={schema}
           uiSchema={uiSchema}

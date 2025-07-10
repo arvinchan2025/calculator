@@ -55,7 +55,7 @@ const PaymentCalculator = () => {
         title={t('payment.calculator')}
         description={t('payment.calculator.description')}
       >
-        <Grid size={6}>
+        <Grid size={{xs: 12, md: 6}}>
           <Tabs
             value={tab}
             onChange={(event, value) => {

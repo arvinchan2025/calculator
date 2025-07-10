@@ -70,5 +70,10 @@
   "circumference.area": "Area",
   "peptide.calculator": "Peptide Calculator",
   "peptide.sequence": "Sequence",
-  "peptide.pi": "Isoelectric Point(pI)"
+  "peptide.pi": "Isoelectric Point(pI)",
+  "asphaltTonnage.calculator": "Asphalt Tonnage Calculator",
+  "asphaltTonnage.length": "Length",
+  "asphaltTonnage.width": "Width",
+  "asphaltTonnage.thickness": "Thickness",
+  "asphaltTonnage.density": "Density"
 }

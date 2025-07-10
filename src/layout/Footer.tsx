@@ -1,14 +1,27 @@
 import {Box, Divider, Link, Stack, Typography} from "@mui/material";
 import {useTranslation} from "react-i18next";
+import Grid from "@mui/material/Grid2";
 
 
 const Footer = () => {
   const {t} = useTranslation()
+  const calculators = [
+    [
+      {label: t('bmi.calculator'), href: '/bmi-calculator'},
+      {label: t('payment.calculator'), href: '/loan-payoff-calculator'},
+      {label: t('tip.calculator'), href: '/tip-calculator'},
+    ],
+    [
+      {label: t('percentOff.calculator'), href: '/percent-off-calculator'},
+      {label: t('circumference.calculator'), href: '/circumference-calculator'},
+      {label: t('peptide.calculator'), href: '/peptide-calculator'},
+    ]
+  ]
   return (
     <Box
       component={'footer'}
       sx={{
-        height: '128px',
+        minHeight: '128px',
         width: "100%",
         backgroundColor: '#fff',
         display: 'flex',
@@ -18,20 +31,23 @@ const Footer = () => {
         bottom: 0
       }}
     >
-      <Stack spacing={2} flex={1} sx={{pt: 2}}>
-        <Box>
-          <Typography>Calculators</Typography>
-          <Stack direction={'row'} spacing={1}>
-            <Link href={'/bmi-calculator'}>{t('bmi.calculator')}</Link>
-            <Link href={'/loan-payoff-calculator'}>{t('payment.calculator')}</Link>
-            <Link href={'/tip-calculator'}>{t('tip.calculator')}</Link>
-            <Link href={'/percent-off-calculator'}>{t('percentOff.calculator')}</Link>
-            <Link href={'/circumference-calculator'}>{t('circumference.calculator')}</Link>
-            <Link href={'/peptide-calculator'}>{t('peptide.calculator')}</Link>
-          </Stack>
-        </Box>
-      </Stack>
-      <Typography sx={{padding: "8px 0"}}>© {new Date().getFullYear()} calculator-now.com. All rights reserved.</Typography>
+      <Grid container sx={{width: '100%'}}>
+        <Grid size={{xs: 0, md: 2}}/>
+        <Grid size={{xs: 12, md: 8}} container>
+          {calculators.map((calculator: any[]) => (
+            <Grid size={{xs: 6, md: 3}} sx={{p: 2}}>
+              <Stack spacing={0.5}>
+                {calculator.map((item: any) => (
+                  <Link href={item.href}>{item.label}</Link>
+                ))}
+              </Stack>
+            </Grid>
+          ))}
+        </Grid>
+        <Grid size={{xs: 0, md: 2}}/>
+      </Grid>
+      <Typography sx={{padding: "8px 0"}}>© {new Date().getFullYear()} calculator-now.com. All rights
+        reserved.</Typography>
     </Box>
   )
 }

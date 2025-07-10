@@ -111,7 +111,7 @@ const BMICalculator = () => {
       title={t('bmi.calculator')}
       description={t('bmi.calculator.description')}
     >
-      <Grid size={6}>
+      <Grid size={{xs: 12, md: 6}}>
         <CalculatorForm
           schema={schema}
           uiSchema={uiSchema}

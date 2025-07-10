@@ -138,7 +138,7 @@ const CircumferenceCalculator = () => {
       title={t('circumference.calculator')}
       description={t('circumference.calculator.description')}
     >
-      <Grid size={6}>
+      <Grid size={{xs: 12, md: 6}}>
         <CalculatorForm
           schema={schema}
           uiSchema={uiSchema}

@@ -76,7 +76,7 @@ const TipCalculator = () => {
       title={t('tip.calculator')}
       description={t('tip.calculator.description')}
     >
-      <Grid size={6}>
+      <Grid size={{xs: 12, md: 6}}>
         <CalculatorForm
           schema={schema}
           uiSchema={uiSchema}

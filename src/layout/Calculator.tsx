@@ -13,8 +13,8 @@ const Calculator = (props: Record<string, any>) => {
     <HelmetProvider>
       {props.pageTitle && <Helmet>
           <title>{props.pageTitle}</title>
-          <meta name='description' content={props.pageDescription}></meta>
-          <meta property={'og:title'} content={props.pageTitle}></meta>
+          <meta name='description' content={props.pageDescription || props.description}></meta>
+          <meta property={'og:title'} content={props.pageTitle || props.title}></meta>
           <meta property={'og:description'} content={props.pageDescription}></meta>
           <meta property={'og:url'} content={`https://calculator-now.com${location.pathname}`}></meta>
           <meta property={'og:type'} content={'website'}></meta>

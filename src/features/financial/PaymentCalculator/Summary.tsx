@@ -15,39 +15,41 @@ const Summary = (props: Record<string, any>) => {
 
   return (
     <Grid container sx={{padding: "32px 0"}}>
-      <Grid size={4}>
+      <Grid size={{xs: 12, md: 6, lg: 4}} sx={{p: 0.5}}>
         <Stack sx={{
           p: 2,
-          borderLeft: "1px solid #ccc",
-          borderTop: "1px solid #ccc"
+          border: "1px solid #ccc",
+          // borderLeft: "1px solid #ccc",
+          // borderTop: "1px solid #ccc"
         }}>
           <Typography>{t('payment.monthlyPayment')}</Typography>
           <Typography variant={'h4'}>{formatAmount(props.result?.monthlyPayment)}</Typography>
         </Stack>
       </Grid>
-      <Grid size={4}>
+      <Grid size={{xs: 12, md: 6, lg: 4}} sx={{p: 0.5}}>
         <Stack sx={{
           p: 2,
-          borderLeft: "1px solid #ccc",
-          borderRight: "1px solid #ccc",
-          borderTop: "1px solid #ccc"
+          border: "1px solid #ccc",
+          // borderLeft: "1px solid #ccc",
+          // borderRight: "1px solid #ccc",
+          // borderTop: "1px solid #ccc"
         }}>
           <Typography>{t('payment.paymentMonths')}</Typography>
           <Typography variant={'h4'}>{`${props.result?.months || 0}`}</Typography>
         </Stack>
       </Grid>
-      <Grid size={4}/>
-      <Grid size={4}>
+      <Grid size={{xs: 0, md: 0, lg: 4}}/>
+      <Grid size={{xs: 12, md: 6, lg: 4}} sx={{p: 0.5}}>
         <Stack sx={{
           p: 2,
           border: "1px solid #ccc",
-          borderRight: 0
+          // borderRight: 0
         }}>
           <Typography>{t('payment.totalInterestPaid')}</Typography>
           <Typography variant={'h4'}>{formatAmount(props.result?.totalInterest)}</Typography>
         </Stack>
       </Grid>
-      <Grid size={4}>
+      <Grid size={{xs: 12, md: 6, lg: 4}} sx={{p: 0.5}}>
         <Stack sx={{
           p: 2,
           border: "1px solid #ccc",

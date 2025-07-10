@@ -14,6 +14,7 @@ const HomePage = () => {
     {label: t("percentOff.calculator"), href: '/percent-off-calculator'},
     {label: t("circumference.calculator"), href: '/circumference-calculator'},
     {label: t("peptide.calculator"), href: '/peptide-calculator'},
+    {label: t("asphaltTonnage.calculator"), href: '/asphalt-tonnage-calculator'},
   ]
   return (
     <Grid container sx={{
@@ -25,7 +26,7 @@ const HomePage = () => {
     }}>
       <Grid size={12} spacing={2} container>
         {calculators.map((calculator, index) => (
-          <Grid size={3}>
+          <Grid size={{xs: 6, md: 4, lg: 3}}>
             <Button
               key={`calculator${index}`}
               sx={{
