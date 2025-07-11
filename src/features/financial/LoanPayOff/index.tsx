@@ -108,18 +108,51 @@ const LoanPayOffCalculator = () => {
             <Summary result={result}/>
             <MonthlyPayments result={result}/>
         </Grid>}
-      {/*  <Grid size={12} sx={{mt: 2}}>*/}
-      {/*  <Stack spacing={4}>*/}
-      {/*    <Stack spacing={2} component={"section"}>*/}
-      {/*      <Typography variant={"h2"}>*/}
-      {/*        {t("bmi.introduction")}*/}
-      {/*      </Typography>*/}
-      {/*      <Typography variant={"body1"}>*/}
-      {/*        {t("bmi.introduction.content")}*/}
-      {/*      </Typography>*/}
-      {/*    </Stack>*/}
-      {/*  </Stack>*/}
-      {/*</Grid>*/}
+        <Grid size={12} sx={{mt: 2}}>
+          <Stack spacing={4}>
+            <Stack spacing={2} component={"section"}>
+              <Typography variant={"h2"}>
+                Why Use a Loan Payoff Calculator?
+              </Typography>
+              <Typography variant={"body1"}>
+                This tool helps you plan your debt-free journey by estimating how long it will take to pay off your loan
+                based on monthly payments and interest rate.
+              </Typography>
+            </Stack>
+            <Stack spacing={2} component={"section"}>
+              <Typography variant={"h2"}>
+                Example
+              </Typography>
+              <Typography variant={"body1"}>
+                Loan: $10,000, Interest: 4.5%, Payment: $250/month → ~44 months to pay off.
+              </Typography>
+            </Stack>
+
+            <Stack spacing={2} component={"section"}>
+              <Typography variant={"h2"}>
+                FAQ
+              </Typography>
+              <Typography variant={"h3"}>
+                How is loan payoff time calculated?
+              </Typography>
+              <Typography variant={"body1"}>
+                It uses the loan amount, interest rate, and monthly payment to estimate the number of months needed.
+              </Typography>
+              <Typography variant={"h3"}>
+                What happens if I pay more than the minimum?
+              </Typography>
+              <Typography variant={"body1"}>
+                Paying extra reduces the total interest and shortens the loan term.
+              </Typography>
+              <Typography variant={"h3"}>
+                Can I include extra payments in the calculation?
+              </Typography>
+              <Typography variant={"body1"}>
+                This calculator assumes fixed monthly payments. Advanced calculators support extra payment plans.
+              </Typography>
+            </Stack>
+          </Stack>
+        </Grid>
       </Calculator>
     </CalculatorContext.Provider>
   )

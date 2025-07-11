@@ -122,10 +122,10 @@ const BMICalculator = () => {
         <Stack spacing={4}>
           <Stack spacing={2} component={"section"}>
             <Typography variant={"h2"}>
-              {t("bmi.introduction")}
+              What is BMI?
             </Typography>
             <Typography variant={"body1"}>
-              {t("bmi.introduction.content")}
+              Body Mass Index (BMI) is a measure of body fat based on height and weight. It's a quick tool to evaluate your fitness level.
             </Typography>
           </Stack>
           <Stack spacing={2} component={"section"}>
@@ -138,6 +138,14 @@ const BMICalculator = () => {
           </Stack>
           <Stack spacing={2} component={"section"}>
             <Typography variant={"h2"}>
+              Example
+            </Typography>
+            <Typography variant={"body1"}>
+              Height: 175 cm, Weight: 70 kg → BMI = 70 / (1.75 × 1.75) = 22.86
+            </Typography>
+          </Stack>
+          <Stack spacing={2} component={"section"}>
+            <Typography variant={"h2"}>
               FAQ
             </Typography>
             <Typography variant={"h3"}>
@@ -145,6 +153,18 @@ const BMICalculator = () => {
             </Typography>
             <Typography variant={"body1"}>
               Normal BMI range is 18.5–24.9. Below or above may indicate underweight or overweight.
+            </Typography>
+            <Typography variant={"h3"}>
+              Is BMI accurate for athletes?
+            </Typography>
+            <Typography variant={"body1"}>
+              Not always. Muscular individuals may show high BMI despite having low body fat.
+            </Typography>
+            <Typography variant={"h3"}>
+              How often should I check my BMI?
+            </Typography>
+            <Typography variant={"body1"}>
+              Check monthly or quarterly to track trends rather than small changes.
             </Typography>
           </Stack>
         </Stack>

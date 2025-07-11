@@ -64,7 +64,7 @@ const PercentOffCalculator = () => {
 
   return (
     <Calculator
-      name={t('percentOff.calculator')}
+      name={t('calculator.percentOff')}
       category={"FinancialApplication"}
       title={t('percentOff.title')}
       description={t('percentOff.description')}
@@ -101,6 +101,29 @@ const PercentOffCalculator = () => {
             </Typography>
             <Typography variant={'body1'}>
               Original price $120, 25% off — you save $30, pay $90.
+            </Typography>
+          </Stack>
+          <Stack spacing={2} component={"section"}>
+            <Typography variant={"h2"}>
+              FAQ
+            </Typography>
+            <Typography variant={"h3"}>
+              How is the discount calculated?
+            </Typography>
+            <Typography variant={"body1"}>
+              Discount = Original Price × (Discount % / 100). Final Price = Original Price - Discount.
+            </Typography>
+            <Typography variant={"h3"}>
+              Can I apply multiple discounts?
+            </Typography>
+            <Typography variant={"body1"}>
+              Yes, but they apply sequentially. For example, 20% off then another 10% is not a total of 30%.
+            </Typography>
+            <Typography variant={"h3"}>
+              How do I calculate the original price if I know the sale price and discount?
+            </Typography>
+            <Typography variant={"body1"}>
+              Use: Original Price = Sale Price / (1 - Discount %)
             </Typography>
           </Stack>
         </Stack>
