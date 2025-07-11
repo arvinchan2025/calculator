@@ -24,7 +24,6 @@ const Footer = () => {
     <Box
       component={'footer'}
       sx={{
-        minHeight: '128px',
         width: "100%",
         backgroundColor: '#fff',
         display: 'flex',
