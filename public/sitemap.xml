@@ -15,43 +15,49 @@
     <url>
         <loc>https://calculator-now.com/bim-calculator</loc>
         <priority>0.3</priority>
-        <lastmod>2025-07-10</lastmod>
+        <lastmod>2025-07-12</lastmod>
+        <changefreq>weekly</changefreq>
+    </url>
+    <url>
+        <loc>https://calculator-now.com/mortgage-calculator</loc>
+        <priority>0.5</priority>
+        <lastmod>2025-07-12</lastmod>
         <changefreq>weekly</changefreq>
     </url>
     <url>
         <loc>https://calculator-now.com/loan-payoff-calculator</loc>
         <priority>0.5</priority>
-        <lastmod>2025-07-10</lastmod>
+        <lastmod>2025-07-12</lastmod>
         <changefreq>weekly</changefreq>
     </url>
     <url>
         <loc>https://calculator-now.com/tip-calculator</loc>
         <priority>0.3</priority>
-        <lastmod>2025-07-10</lastmod>
+        <lastmod>2025-07-12</lastmod>
         <changefreq>weekly</changefreq>
     </url>
     <url>
         <loc>https://calculator-now.com/percent-off-calculator</loc>
         <priority>0.3</priority>
-        <lastmod>2025-07-10</lastmod>
+        <lastmod>2025-07-12</lastmod>
         <changefreq>weekly</changefreq>
     </url>
     <url>
         <loc>https://calculator-now.com/circumference-calculator</loc>
         <priority>0.5</priority>
-        <lastmod>2025-07-10</lastmod>
+        <lastmod>2025-07-12</lastmod>
         <changefreq>weekly</changefreq>
     </url>
     <url>
         <loc>https://calculator-now.com/peptide-calculator</loc>
         <priority>0.5</priority>
-        <lastmod>2025-07-10</lastmod>
+        <lastmod>2025-07-12</lastmod>
         <changefreq>weekly</changefreq>
     </url>
     <url>
         <loc>https://calculator-now.com/asphalt-tonnage-calculator</loc>
         <priority>0.5</priority>
-        <lastmod>2025-07-10</lastmod>
+        <lastmod>2025-07-12</lastmod>
         <changefreq>weekly</changefreq>
     </url>
 </urlset>
