@@ -11,19 +11,19 @@ const Calculator = (props: Record<string, any>) => {
   const location = useLocation()
   return (
     <HelmetProvider>
-      {props.pageTitle && <Helmet>
-          <title>{props.pageTitle}</title>
-          <meta name='description' content={props.pageDescription || props.description}></meta>
-          <meta property={'og:title'} content={props.pageTitle || props.title}></meta>
-          <meta property={'og:description'} content={props.pageDescription}></meta>
+      {props.title && <Helmet>
+          <title>{props.title}</title>
+          <meta name='description' content={props.description}></meta>
+          <meta property={'og:title'} content={props.title}></meta>
+          <meta property={'og:description'} content={props.description}></meta>
           <meta property={'og:url'} content={`https://calculator-now.com${location.pathname}`}></meta>
           <meta property={'og:type'} content={'website'}></meta>
           <script type="application/ld+json">
             {`{
               "@context": "https://schema.org",
               "@type": "WebApplication",
-              "name": "${props.pageTitle}",
-              "description": "${props.pageDescription}",
+              "name": "${props.title}",
+              "description": "${props.description}",
               "applicationCategory": "${props.category}",
               "operatingSystem": "All",
               "url": "https://calculator-now.com${location.pathname}"
@@ -41,7 +41,7 @@ const Calculator = (props: Record<string, any>) => {
             >
               {t('calculator.home')}
             </Link>
-            <Typography sx={{color: 'text.primary'}}>{props.title}</Typography>
+            <Typography sx={{color: 'text.primary'}}>{props.name}</Typography>
           </Breadcrumbs>
         </Grid>
         <Grid size={12}>

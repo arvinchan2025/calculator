@@ -84,6 +84,7 @@ const AsphaltTonnageCalculator = () => {
 
   return (
     <Calculator
+      name={t('asphaltTonnage.calculator')}
       category={'ConstructionApplication'}
       title={'Asphalt Tonnage Calculator'}
       description={'Free tool to estimate asphalt volume in tons based on area and thickness. Great for paving and construction.'}

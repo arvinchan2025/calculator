@@ -105,11 +105,10 @@ const BMICalculator = () => {
 
   return (
     <Calculator
+      name={t('calculator.bmi')}
       category={'HealthApplication'}
-      pageTitle={t('bmi.pageTitle')}
-      pageDescription={t('bmi.pageDescription')}
-      title={t('bmi.calculator')}
-      description={t('bmi.calculator.description')}
+      title={t('bmi.title')}
+      description={t('bmi.description')}
     >
       <Grid size={{xs: 12, md: 6}}>
         <CalculatorForm

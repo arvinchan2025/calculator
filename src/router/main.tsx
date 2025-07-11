@@ -1,10 +1,12 @@
 import {Navigate, useRoutes} from "react-router-dom";
 import MainLayout from "@/layout";
 import {lazy} from "react";
+import LoanPayOff from "@/features/financial/LoanPayOff";
 
 const HomePage = lazy(() => import("@/features/HomePage"))
 const BMICalculator = lazy(() => import("@/features/health/BMICalculator"))
-const PaymentCalculator = lazy(() => import("@/features/financial/PaymentCalculator"))
+const MortgageCalculator = lazy(() => import("@/features/financial/Mortgage"))
+const LoanPayOffCalculator = lazy(() => import("@/features/financial/LoanPayOff"))
 const TipCalculator = lazy(() => import("@/features/other/TipCalculator"))
 const PercentOffCalculator = lazy(() => import("@/features/financial/PercentOffCalculator"))
 const CircumferenceCalculator = lazy(() => import("@/features/math/Circumference"))
@@ -18,7 +20,8 @@ const MainRouter = () => {
       // {index: true, element: <Navigate to={'bmi-calculator'} />},
       {index: true, element: <HomePage />},
       {path: 'bmi-calculator', element: <BMICalculator/>},
-      {path: 'loan-payoff-calculator', element: <PaymentCalculator/>},
+      {path: 'mortgage-calculator', element: <MortgageCalculator/>},
+      {path: 'loan-payoff-calculator', element: <LoanPayOffCalculator/>},
       {path: 'tip-calculator', element: <TipCalculator/>},
       {path: 'percent-off-calculator', element: <PercentOffCalculator/>},
       {path: 'circumference-calculator', element: <CircumferenceCalculator/>},

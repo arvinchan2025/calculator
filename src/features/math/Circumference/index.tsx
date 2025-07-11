@@ -132,11 +132,10 @@ const CircumferenceCalculator = () => {
 
   return (
     <Calculator
+      name={t('calculator.circumference')}
       category={'MathApplication'}
-      pageTitle={t('circumference.pageTitle')}
-      pageDescription={t('circumference.pageDescription')}
-      title={t('circumference.calculator')}
-      description={t('circumference.calculator.description')}
+      title={t('circumference.title')}
+      description={t('circumference.description')}
     >
       <Grid size={{xs: 12, md: 6}}>
         <CalculatorForm

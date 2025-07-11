@@ -96,6 +96,7 @@ const PeptideCalculator = () => {
 
   return (
     <Calculator
+      name={t('calculator.peptide')}
       category={'MedicineApplication'}
       title={'Peptide Calculator'}
       description={'A Peptide Calculator typically helps you compute properties of a peptide based on its amino acid sequence.'}

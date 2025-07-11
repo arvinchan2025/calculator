@@ -23,18 +23,28 @@ const TipCalculator = () => {
         title: t('tip.tipRate'),
         default: 15
       },
-      tipAmount: {
-        type: "string",
-        title: t('tip.tipAmount'),
-        default: ''
+      people: {
+        type: "number",
+        title: t('tip.people'),
+        default: 1
       },
       total: {
         type: "string",
         title: t('tip.total'),
         default: ''
       },
+      tipAmount: {
+        type: "string",
+        title: t('tip.tipAmount'),
+        default: ''
+      },
+      perPerson: {
+        type: "string",
+        title: t('tip.perPerson'),
+        default: ''
+      },
     },
-    required: ["bill", 'tipRate'],
+    required: ["bill", 'tipRate', 'people'],
   }
 
   const uiSchema: UiSchema = {
@@ -53,16 +63,18 @@ const TipCalculator = () => {
     if (formData.bill && formData.tipRate) {
       const tipAmount = formData.bill * formData.tipRate / 100
       const total = formData.bill + tipAmount
+      const perPerson = total / formData.people
       return {
+        total: total.toFixed(2),
         tipAmount: tipAmount.toFixed(2),
-        total: total.toFixed(2)
+        perPerson: perPerson.toFixed(2)
       }
     }
-    return {tipAmount: '', total: ''}
+    return {tipAmount: '', total: '', perPerson: ''}
   }
 
   const onChange = (data: any, id?: string) => {
-    if (id === 'root_bill' || id === 'root_tipRate') {
+    if (id === 'root_bill' || id === 'root_tipRate' || id === 'root_people') {
       return onCalculate(data.formData)
     }
     return {}
@@ -70,11 +82,10 @@ const TipCalculator = () => {
 
   return (
     <Calculator
+      name={t('calculator.tip')}
       category={'CalculationApplication'}
-      pageTitle={t('tip.pageTitle')}
-      pageDescription={t('tip.pageDescription')}
-      title={t('tip.calculator')}
-      description={t('tip.calculator.description')}
+      title={t('tip.title')}
+      description={t('tip.description')}
     >
       <Grid size={{xs: 12, md: 6}}>
         <CalculatorForm

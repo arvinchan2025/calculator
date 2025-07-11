@@ -64,11 +64,10 @@ const PercentOffCalculator = () => {
 
   return (
     <Calculator
+      name={t('percentOff.calculator')}
       category={"FinancialApplication"}
-      pageTitle={t('percentOff.pageTitle')}
-      pageDescription={t('percentOff.pageDescription')}
-      title={t('percentOff.calculator')}
-      description={t('percentOff.calculator.description')}
+      title={t('percentOff.title')}
+      description={t('percentOff.description')}
     >
       <Grid size={{xs: 12, md: 6}}>
         <CalculatorForm
