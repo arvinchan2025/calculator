@@ -4,7 +4,7 @@ import validator from "@rjsf/validator-ajv8";
 import React, {useEffect, useRef} from "react";
 import {Calculate, Clear, Close, Share} from "@mui/icons-material";
 import {useTranslation} from "react-i18next";
-import {useLocation, useParams, useSearchParams} from "react-router-dom";
+import {useLocation, useSearchParams} from "react-router-dom";
 
 
 const CalculatorForm = (props: any) => {
@@ -21,7 +21,7 @@ const CalculatorForm = (props: any) => {
     const isValid = await formRef.current?.validateForm()
     if (isValid) {
       const formData = formRef.current?.state.formData
-      const result= await props.onCalculate(formData)
+      const result = props.onCalculate(formData)
       setFormData({
         ...formData,
         ...result
@@ -44,7 +44,7 @@ const CalculatorForm = (props: any) => {
   useEffect(() => {
     const resultParam = searchParams.get('result')
     const result = resultParam && decodeURIComponent(atob(resultParam))
-    if(result){
+    if (result) {
       const formData = JSON.parse(result)
       const ret = props.onCalculate(formData)
       setFormData({
@@ -64,13 +64,13 @@ const CalculatorForm = (props: any) => {
         validator={validator}
         formData={formData}
         onChange={(data, id) => {
-          if(props.onChange){
+          if (props.onChange) {
             const result = props.onChange(data, id)
             setFormData({
               ...data.formData,
               ...result
             })
-          }else{
+          } else {
             setFormData(data.formData)
           }
         }}
@@ -128,7 +128,7 @@ const CalculatorForm = (props: any) => {
           }}
           onClick={() => setShare({...share, open: false})}
         >
-          <Close />
+          <Close/>
         </IconButton>
         <DialogContent sx={{paddingBottom: '16px'}}>
           <DialogContent>

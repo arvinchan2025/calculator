@@ -42,6 +42,7 @@ const CalculatorProvider = (props: any) => {
       {key: 'tip', label: t("calculator.tip"), href: '/tip-calculator'},
       {key: 'circumference', label: t("calculator.circumference"), href: '/circumference-calculator'},
       {key: 'peptide', label: t("calculator.peptide"), href: '/peptide-calculator'},
+      {key: 'gpa', label: t("calculator.gpa"), href: '/gpa-calculator'},
     ]
   }
   // const calculators = [

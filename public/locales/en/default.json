@@ -88,5 +88,13 @@
   "paintCoverage.windowArea": "Area Per Window",
   "paintCoverage.coats": "Coats",
   "paintCoverage.coveragePerLiter": "Coverage Per Liter",
-  "paintCoverage.requiredPaint": "Required Paint"
+  "paintCoverage.requiredPaint": "Required Paint",
+  "calculator.gpa": "GPA Calculator",
+  "gpa.title": "GPA Calculator - Weighted and Unweighted GPA",
+  "gpa.description": "Calculate your GPA easily with support for letter grades, weighted courses, and credit hours.",
+  "gpa.courses": "Courses",
+  "gpa.courseName": "Course Name",
+  "gpa.grade": "Grade",
+  "gpa.credit": "Credit",
+  "gpa.honors": "Honors"
 }
