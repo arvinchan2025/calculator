@@ -3,10 +3,10 @@ import {RJSFSchema} from "@rjsf/utils";
 import Calculator from "@/layout/Calculator";
 import Grid from "@mui/material/Grid2";
 import CalculatorForm from "@/layout/CalculatorForm";
-import formatter from "@mui/x-charts/RadarChart/seriesConfig/formatter";
 import CoursesFieldTemplate from "@/features/other/GPA/CoursesFieldTemplate";
-import CourseTemplate from "@/features/other/GPA/CourseTemplate";
 import CourseRecordView from "@/features/other/GPA/CourseRecordView";
+import LetterGradeTable from "@/features/other/GPA/LetterGradeTable";
+import {Typography} from "@mui/material";
 
 
 const GPACalculator = () => {
@@ -31,7 +31,8 @@ const GPACalculator = () => {
                 4.0, 4.0, 3.7,
                 3.3, 3.0, 2.7,
                 2.3, 2.0, 1.7,
-                1.3, 1.0, 0.0
+                1.3, 1.0, 0.7,
+                0.0
               ]
             },
             credit: {
@@ -63,7 +64,8 @@ const GPACalculator = () => {
             'A+', 'A', 'A-',
             'B+', 'B', 'B-',
             'C+', 'C', 'C-',
-            'D+', 'D', 'F',
+            'D+', 'D', 'D-',
+            'F',
           ]
         }
       }
@@ -106,6 +108,15 @@ const GPACalculator = () => {
           onCalculate={onCalculate}
           onChange={onChange}
         />
+      </Grid>
+      <Grid
+        size={12}
+        component={'section'}
+      >
+        <Typography variant={'h2'} sx={{padding: "8px 0"}}>
+          {t('gpa.letterGradeTable')}
+        </Typography>
+        <LetterGradeTable />
       </Grid>
     </Calculator>
   )

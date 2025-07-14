@@ -96,5 +96,7 @@
   "gpa.courseName": "Course Name",
   "gpa.grade": "Grade",
   "gpa.credit": "Credit",
-  "gpa.honors": "Honors"
+  "gpa.letterGradeTable": "The comparison table of GPA letter grades and corresponding values",
+  "gpa.gradeLetter": "Grade Letter",
+  "gpa.gradePoints": "Grade Points"
 }
