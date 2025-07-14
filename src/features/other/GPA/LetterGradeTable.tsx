@@ -9,8 +9,8 @@ const LetterGradeTable = () => {
   ]
 
   const rows = [
-    {id: 1, gradeLetter: 'A+', gradePoints: '4,3'},
-    {id: 2, gradeLetter: 'A', gradePoints: '4,0'},
+    {id: 1, gradeLetter: 'A+', gradePoints: '4.3'},
+    {id: 2, gradeLetter: 'A', gradePoints: '4.0'},
     {id: 3, gradeLetter: 'A-', gradePoints: '3.7'},
     {id: 4, gradeLetter: 'B+', gradePoints: '3.3'},
     {id: 5, gradeLetter: 'B', gradePoints: '3.0'},
