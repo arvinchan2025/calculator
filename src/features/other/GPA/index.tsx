@@ -28,7 +28,7 @@ const GPACalculator = () => {
               type: "number",
               title: t('gpa.grade'),
               enum: [
-                4.0, 4.0, 3.7,
+                4., 4.0, 3.7,
                 3.3, 3.0, 2.7,
                 2.3, 2.0, 1.7,
                 1.3, 1.0, 0.7,
@@ -107,6 +107,11 @@ const GPACalculator = () => {
           uiSchema={uiSchema}
           onCalculate={onCalculate}
           onChange={onChange}
+          formData={{
+            courses: [
+              {name: 'Math', grade: 4.0, credit: 3}
+            ]
+          }}
         />
       </Grid>
       <Grid

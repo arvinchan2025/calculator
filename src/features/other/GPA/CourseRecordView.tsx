@@ -13,11 +13,11 @@ const CourseRecordView = (props: ObjectFieldTemplateProps) => {
       <Grid size={{xs: 12, md: 12, lg: 5}}>
         {fields.name}
       </Grid>
-      <Grid size={{xs: 12, md: 12, lg: 4}}>
-        {fields.grade}
-      </Grid>
       <Grid size={{xs: 12, md: 12, lg: 3}}>
         {fields.credit}
+      </Grid>
+      <Grid size={{xs: 12, md: 12, lg: 4}}>
+        {fields.grade}
       </Grid>
     </Grid>
   )
