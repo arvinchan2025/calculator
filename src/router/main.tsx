@@ -21,6 +21,7 @@ const MainRouter = () => {
     path: "/", element: <MainLayout/>, children: [
       // {index: true, element: <Navigate to={'bmi-calculator'} />},
       {index: true, element: <HomePage />},
+      {path: 'home', element: <HomePage />},
       {path: 'bmi-calculator', element: <BMICalculator/>},
       {path: 'mortgage-calculator', element: <MortgageCalculator/>},
       {path: 'loan-payoff-calculator', element: <LoanPayOffCalculator/>},
