@@ -12,6 +12,7 @@ const PercentOffCalculator = lazy(() => import("@/features/financial/PercentOffC
 const CircumferenceCalculator = lazy(() => import("@/features/math/Circumference"))
 const PeptideCalculator = lazy(() => import("@/features/medicine/PeptideCalculator"))
 const AsphaltTonnageCalculator = lazy(() => import("@/features/construction/AsphaltTonnage"))
+const PaintCoverageCalculator = lazy(() => import("@/features/construction/PaintCoverage"))
 
 
 const MainRouter = () => {
@@ -26,7 +27,8 @@ const MainRouter = () => {
       {path: 'percent-off-calculator', element: <PercentOffCalculator/>},
       {path: 'circumference-calculator', element: <CircumferenceCalculator/>},
       {path: 'peptide-calculator', element: <PeptideCalculator/>},
-      {path: 'asphalt-tonnage-calculator', element: <AsphaltTonnageCalculator/>}
+      {path: 'asphalt-tonnage-calculator', element: <AsphaltTonnageCalculator/>},
+      {path: 'paint-coverage-calculator', element: <PaintCoverageCalculator/>}
     ]
   }])
 }

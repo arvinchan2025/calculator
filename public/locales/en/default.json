@@ -75,5 +75,18 @@
   "asphaltTonnage.length": "Length",
   "asphaltTonnage.width": "Width",
   "asphaltTonnage.thickness": "Thickness",
-  "asphaltTonnage.density": "Density"
+  "asphaltTonnage.density": "Density",
+  "calculator.paintCoverage": "Paint Coverage Calculator",
+  "paintCoverage.title": "Paint Calculator - Estimate How Much Paint You Need",
+  "paintCoverage.description": "Calculate how much paint you need for a wall or room based on dimensions, doors, and windows.",
+  "paintCoverage.length": "Length",
+  "paintCoverage.width": "Width",
+  "paintCoverage.height": "Height",
+  "paintCoverage.doors": "Doors",
+  "paintCoverage.doorArea": "Area Per Door",
+  "paintCoverage.windows": "Windows",
+  "paintCoverage.windowArea": "Area Per Window",
+  "paintCoverage.coats": "Coats",
+  "paintCoverage.coveragePerLiter": "Coverage Per Liter",
+  "paintCoverage.requiredPaint": "Required Paint"
 }

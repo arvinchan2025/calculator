@@ -30,6 +30,7 @@ const CalculatorProvider = (props: any) => {
     ],
     construction: [
       {key: 'asphaltTonnage', label: t("calculator.asphaltTonnage"), href: '/asphalt-tonnage-calculator'},
+      {key: 'paintCoverage', label: t("calculator.paintCoverage"), href: '/paint-coverage-calculator'},
     ],
     // medicine: [
     //   {key: 'peptide', label: t("calculator.peptide"), href: '/peptide-calculator'},
