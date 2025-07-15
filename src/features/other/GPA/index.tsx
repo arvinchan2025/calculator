@@ -6,7 +6,8 @@ import CalculatorForm from "@/layout/CalculatorForm";
 import CoursesFieldTemplate from "@/features/other/GPA/CoursesFieldTemplate";
 import CourseRecordView from "@/features/other/GPA/CourseRecordView";
 import LetterGradeTable from "@/features/other/GPA/LetterGradeTable";
-import {Typography} from "@mui/material";
+import {Stack, Typography} from "@mui/material";
+import React from "react";
 
 
 const GPACalculator = () => {
@@ -118,10 +119,38 @@ const GPACalculator = () => {
         size={12}
         component={'section'}
       >
-        <Typography variant={'h2'} sx={{padding: "8px 0"}}>
-          {t('gpa.letterGradeTable')}
-        </Typography>
-        <LetterGradeTable />
+        <Stack spacing={3}>
+          <Stack component={"section"} spacing={2}>
+            <Typography variant={"h2"}>
+              {t("What is GPA?")}
+            </Typography>
+            <Typography variant={"body1"}>
+              {t("GPA stands for Grade Point Average — a weighted or unweighted average of your grades.")}
+            </Typography>
+          </Stack>
+          <Stack component={"section"} spacing={2}>
+            <Typography variant={"h2"}>
+              {t("What’s the difference between weighted and unweighted GPA?")}
+            </Typography>
+            <Typography variant={"body1"}>
+              {t("Weighted GPA gives extra points for harder courses (like Honors or AP), while unweighted treats all courses equally.")}
+            </Typography>
+          </Stack>
+          <Stack component={"section"} spacing={2}>
+            <Typography variant={"h2"}>
+              {t("How do I convert a letter grade to GPA?")}
+            </Typography>
+            <Typography variant={"body1"}>
+              {t("Each grade maps to a GPA point (e.g., A = 4.0, B+ = 3.3, etc.).")}
+            </Typography>
+          </Stack>
+          <Stack component={"section"} spacing={2}>
+            <Typography variant={'h2'}>
+              {t('gpa.letterGradeTable')}
+            </Typography>
+            <LetterGradeTable/>
+          </Stack>
+        </Stack>
       </Grid>
     </Calculator>
   )
