@@ -1,6 +1,17 @@
 import React, {useContext, useState} from "react";
 import CalculatorForm from "@/layout/CalculatorForm";
 import {useTranslation} from "react-i18next";
+import {
+  Accessibility,
+  AccountBalance,
+  AddRoad,
+  Checklist,
+  FormatColorFill,
+  House,
+  PriceCheck,
+  Receipt,
+  Link, BlurCircular
+} from "@mui/icons-material";
 
 type CalculatorContextProps = Record<string, any>
 
@@ -21,16 +32,46 @@ const CalculatorProvider = (props: any) => {
   const [result, setResult] = useState<any>(null);
   const calculators = {
     health: [
-      {key: 'bmi', label: t("calculator.bmi"), href: '/bmi-calculator'},
+      {
+        key: 'bmi',
+        label: t("calculator.bmi"),
+        href: '/bmi-calculator',
+        icon: <Accessibility />
+      },
     ],
     financial: [
-      {key: 'mortgage', label: t("calculator.mortgage"), href: '/mortgage-calculator'},
-      {key: 'loanPayoff', label: t("calculator.loanPayoff"), href: '/loan-payoff-calculator'},
-      {key: 'percentOff', label: t("calculator.percentOff"), href: '/percent-off-calculator'},
+      {
+        key: 'mortgage',
+        label: t("calculator.mortgage"),
+        href: '/mortgage-calculator',
+        icon: <House />
+      },
+      {
+        key: 'loanPayoff',
+        label: t("calculator.loanPayoff"),
+        href: '/loan-payoff-calculator',
+        icon: <AccountBalance/>
+      },
+      {
+        key: 'percentOff',
+        label: t("calculator.percentOff"),
+        href: '/percent-off-calculator',
+        icon: <PriceCheck />
+      },
     ],
     construction: [
-      {key: 'asphaltTonnage', label: t("calculator.asphaltTonnage"), href: '/asphalt-tonnage-calculator'},
-      {key: 'paintCoverage', label: t("calculator.paintCoverage"), href: '/paint-coverage-calculator'},
+      {
+        key: 'asphaltTonnage',
+        label: t("calculator.asphaltTonnage"),
+        href: '/asphalt-tonnage-calculator',
+        icon: <AddRoad />
+      },
+      {
+        key: 'paintCoverage',
+        label: t("calculator.paintCoverage"),
+        href: '/paint-coverage-calculator',
+        icon: <FormatColorFill />
+      },
     ],
     // medicine: [
     //   {key: 'peptide', label: t("calculator.peptide"), href: '/peptide-calculator'},
@@ -39,10 +80,30 @@ const CalculatorProvider = (props: any) => {
     //   {key: 'circumference', label: t("calculator.circumference"), href: '/circumference-calculator'},
     // ],
     other: [
-      {key: 'tip', label: t("calculator.tip"), href: '/tip-calculator'},
-      {key: 'circumference', label: t("calculator.circumference"), href: '/circumference-calculator'},
-      {key: 'peptide', label: t("calculator.peptide"), href: '/peptide-calculator'},
-      {key: 'gpa', label: t("calculator.gpa"), href: '/gpa-calculator'},
+      {
+        key: 'tip',
+        label: t("calculator.tip"),
+        href: '/tip-calculator',
+        icon: <Receipt />
+      },
+      {
+        key: 'circumference',
+        label: t("calculator.circumference"),
+        href: '/circumference-calculator',
+        icon: <BlurCircular />
+      },
+      {
+        key: 'peptide',
+        label: t("calculator.peptide"),
+        href: '/peptide-calculator',
+        icon: <Link />
+      },
+      {
+        key: 'gpa',
+        label: t("calculator.gpa"),
+        href: '/gpa-calculator',
+        icon: <Checklist />
+      },
     ]
   }
   // const calculators = [

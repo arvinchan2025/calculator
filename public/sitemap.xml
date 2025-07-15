@@ -9,7 +9,13 @@
     <url>
         <loc>https://calculator-now.com/</loc>
         <priority>0.3</priority>
-        <lastmod>2025-07-10</lastmod>
+        <lastmod>2025-07-15</lastmod>
+        <changefreq>weekly</changefreq>
+    </url>
+    <url>
+        <loc>https://calculator-now.com/home</loc>
+        <priority>0.3</priority>
+        <lastmod>2025-07-15</lastmod>
         <changefreq>weekly</changefreq>
     </url>
     <url>

@@ -1,8 +1,9 @@
 import Grid from "@mui/material/Grid2";
-import {Button, Stack, Typography} from "@mui/material";
+import {Box, Button, IconButton, Stack, Typography} from "@mui/material";
 import {useTranslation} from "react-i18next";
 import {useNavigate} from "react-router-dom";
 import {useCalculatorContext} from "@/providers/CalculatorProvider";
+import React from "react";
 
 
 const HomePage = () => {
@@ -32,6 +33,7 @@ const HomePage = () => {
                 onClick={() => navigate(calculator.href)}
               >
                 <Stack>
+                  <Box className={"calculator-icon"}>{calculator.icon}</Box>
                   <Typography>{calculator.label}</Typography>
                 </Stack>
               </Button>

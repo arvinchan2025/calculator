@@ -46,3 +46,6 @@ section .MuiTypography-h3 {
   font-size: 16px;
   font-weight: 500;
 }
+.calculator-icon svg {
+  font-size: 32px;
+}
