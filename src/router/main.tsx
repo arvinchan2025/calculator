@@ -9,6 +9,7 @@ const MortgageCalculator = lazy(() => import("@/features/financial/Mortgage"))
 const LoanPayOffCalculator = lazy(() => import("@/features/financial/LoanPayOff"))
 const TipCalculator = lazy(() => import("@/features/other/TipCalculator"))
 const PercentOffCalculator = lazy(() => import("@/features/financial/PercentOffCalculator"))
+const CreditCardCalculator = lazy(() => import("@/features/financial/CreditCard"))
 const CircumferenceCalculator = lazy(() => import("@/features/math/Circumference"))
 const PeptideCalculator = lazy(() => import("@/features/medicine/PeptideCalculator"))
 const AsphaltTonnageCalculator = lazy(() => import("@/features/construction/AsphaltTonnage"))
@@ -25,6 +26,7 @@ const MainRouter = () => {
       {path: 'bmi-calculator', element: <BMICalculator/>},
       {path: 'mortgage-calculator', element: <MortgageCalculator/>},
       {path: 'loan-payoff-calculator', element: <LoanPayOffCalculator/>},
+      {path: 'credit-card-payoff-calculator', element: <CreditCardCalculator/>},
       {path: 'tip-calculator', element: <TipCalculator/>},
       {path: 'percent-off-calculator', element: <PercentOffCalculator/>},
       {path: 'circumference-calculator', element: <CircumferenceCalculator/>},

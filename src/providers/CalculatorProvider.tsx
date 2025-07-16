@@ -10,7 +10,7 @@ import {
   House,
   PriceCheck,
   Receipt,
-  Link, BlurCircular
+  Link, BlurCircular, Payment
 } from "@mui/icons-material";
 
 type CalculatorContextProps = Record<string, any>
@@ -51,6 +51,12 @@ const CalculatorProvider = (props: any) => {
         label: t("calculator.loanPayoff"),
         href: '/loan-payoff-calculator',
         icon: <AccountBalance/>
+      },
+      {
+        key: 'creditCard',
+        label: t("calculator.creditCard"),
+        href: '/credit-card-payoff-calculator',
+        icon: <Payment/>
       },
       {
         key: 'percentOff',

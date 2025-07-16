@@ -34,7 +34,7 @@ const MUIBaseInputTemplate = (props: BaseInputTemplateProps) => {
           endAdornment: suffix? <InputAdornment position={"end"}>{suffix}</InputAdornment>: null,
         }
       }}
-      helperText={uiSchema?.["ui:help"]}
+      helperText={uiSchema?.["ui:helpTxt"]}
       onChange={_onChange}
     />
   )

@@ -101,5 +101,18 @@
   "gpa.credit": "Credit",
   "gpa.letterGradeTable": "The comparison table of GPA letter grades and corresponding values",
   "gpa.gradeLetter": "Grade Letter",
-  "gpa.gradePoints": "Grade Points"
+  "gpa.gradePoints": "Grade Points",
+  "calculator.creditCard": "Credit Card Payoff Calculator",
+  "creditCard.title": "Credit Card Payoff Calculator – Plan Your Debt-Free Journey",
+  "creditCard.description": "Use our free Credit Card Payoff Calculator to find out how long it will take to pay off your balance or how much you need to pay monthly to be debt-free. Stop guessing and start saving interest today.",
+  "creditCard.balance": "Credit Card Balance",
+  "creditCard.balance.helpTxt": "The current credit card balance",
+  "creditCard.interestRate": "Annual Interest Rate",
+  "creditCard.interestRate.helpTxt": "APR (Annual Percentage Rate)",
+  "creditCard.monthlyPayment": "Monthly Payment",
+  "creditCard.monthlyPayment.helpTxt": "How much you plan to pay per month",
+  "creditCard.additionalPayment": "Additional Payment(Optional)",
+  "creditCard.additionalPayment.helpTxt": "Any extra payment added to monthly payment",
+  "creditCard.months": "Months",
+  "creditCard.totalInterest": "Total Interest"
 }
