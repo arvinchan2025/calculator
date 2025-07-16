@@ -14,6 +14,7 @@ const Calculator = (props: Record<string, any>) => {
       {props.title && <Helmet>
           <title>{props.title}</title>
           <meta name='description' content={props.description}></meta>
+          <link rel="canonical" href={`https://calculator-now.com${location.pathname}`}/>
           <meta property={'og:title'} content={props.title}></meta>
           <meta property={'og:description'} content={props.description}></meta>
           <meta property={'og:url'} content={`https://calculator-now.com${location.pathname}`}></meta>
