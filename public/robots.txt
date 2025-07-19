@@ -1,4 +1,9 @@
-# https://www.robotstxt.org/robotstxt.html
-# https://www.calculator-now.com/sitemap.xml
-User-agent: *
-Disallow:
+User-Agent: *
+Allow: /
+Disallow: /api/
+Disallow: /admin/
+Disallow: /_next/
+Disallow: /cdn-cgi/
+
+Host: https://www.calculator-now.com
+Sitemap: https://www.calculator-now.com/sitemap.xml

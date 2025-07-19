@@ -159,7 +159,7 @@ const CreditCardCalculator = () => {
               <ul>
                 <li>If your monthly payment is too low to cover interest, your balance will grow, not shrink.</li>
                 <li>Adding extra monthly payments can dramatically reduce payoff time and total interest.</li>
-                <li>Use a <Link href={'https://calculator-now.com/credit-card-payoff-calculator'}>credit card payoff calculator</Link> for instant results..</li>
+                <li>Use a <Link href={'https://www.calculator-now.com/credit-card-payoff-calculator'}>credit card payoff calculator</Link> for instant results..</li>
               </ul>
             </Stack>
           </Stack>
