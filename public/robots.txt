@@ -5,5 +5,5 @@ Disallow: /admin/
 Disallow: /_next/
 Disallow: /cdn-cgi/
 
-Host: https://www.calculator-now.com
-Sitemap: https://www.calculator-now.com/sitemap.xml
+Host: https://calculator-now.com
+Sitemap: https://calculator-now.com/sitemap.xml
