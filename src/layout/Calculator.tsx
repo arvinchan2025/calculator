@@ -2,12 +2,14 @@ import Grid from "@mui/material/Grid2";
 import {Breadcrumbs, Card, CardContent, CardHeader, Link, Typography} from "@mui/material";
 import React from "react";
 import {useTranslation} from "react-i18next";
-import {HelmetProvider, Helmet} from "react-helmet-async";
+import {Helmet, HelmetProvider} from "react-helmet-async";
 import {useLocation} from "react-router-dom";
+import {useCalculatorContext} from "@/providers/CalculatorProvider";
 
 
 const Calculator = (props: Record<string, any>) => {
   const {t} = useTranslation();
+  const {getI18NPath} = useCalculatorContext()
   const location = useLocation()
   return (
     <HelmetProvider>
@@ -38,7 +40,7 @@ const Calculator = (props: Record<string, any>) => {
             <Link
               underline="hover"
               color="inherit"
-              href="/"
+              href={getI18NPath('/')}
             >
               {t('calculator.home')}
             </Link>

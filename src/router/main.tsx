@@ -1,7 +1,6 @@
-import {Navigate, useRoutes} from "react-router-dom";
+import {useRoutes} from "react-router-dom";
 import MainLayout from "@/layout";
 import {lazy} from "react";
-import LoanPayOff from "@/features/financial/LoanPayOff";
 
 const HomePage = lazy(() => import("@/features/HomePage"))
 const BMICalculator = lazy(() => import("@/features/health/BMICalculator"))
@@ -21,8 +20,8 @@ const MainRouter = () => {
   return useRoutes([{
     path: "/", element: <MainLayout/>, children: [
       // {index: true, element: <Navigate to={'bmi-calculator'} />},
-      {index: true, element: <HomePage />},
-      {path: 'home', element: <HomePage />},
+      {index: true, element: <HomePage/>},
+      {path: 'home', element: <HomePage/>},
       {path: 'bmi-calculator', element: <BMICalculator/>},
       {path: 'mortgage-calculator', element: <MortgageCalculator/>},
       {path: 'loan-payoff-calculator', element: <LoanPayOffCalculator/>},

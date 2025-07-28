@@ -4,6 +4,7 @@ import createCache from "@emotion/cache";
 import {prefixer} from "stylis";
 import stylisRTLPlugin from "stylis-plugin-rtl";
 import {CacheProvider} from "@emotion/react";
+import {useTranslation} from "react-i18next";
 
 type ProviderProps = {
   children?: React.ReactNode
@@ -25,28 +26,28 @@ export const useMuiThemeContext = () => {
 
 
 const MuiThemeProvider: React.FC<ProviderProps> = (props) => {
-  const currentLanguage = localStorage.getItem("i18nextLng");
-  const defaultDirection = currentLanguage === "ar" ? "rtl" : "ltr"
-  const [direction, setDirection] = useState<any>(defaultDirection)
-
-  const cacheRtl = useMemo(() => createCache({
-    key: `mui-${direction}`,
-    stylisPlugins: direction === "rtl" ? [prefixer, stylisRTLPlugin] : []
-  }), [direction])
-  const isRTL = direction === "rtl"
+  const {i18n} = useTranslation();
+  const cacheRtl = useMemo(() => {
+    const direction = i18n.language === 'ar' ? 'rtl' : 'ltr';
+    return createCache({
+      key: `mui-${direction}`,
+      stylisPlugins: direction === "rtl" ? [prefixer, stylisRTLPlugin] : []
+    })
+  }, [i18n.language])
 
   useEffect(() => {
-    document.dir = direction
-  }, [direction])
+    document.documentElement.lang = i18n.language
+    document.documentElement.dir = i18n.language === 'ar' ? 'rtl' : 'ltr';
+  }, [i18n.language])
 
   return (
     <MuiThemeContext.Provider value={{
-      setDirection,
+      // setDirection,
     }}>
       <CacheProvider value={cacheRtl}>
         <ThemeProvider theme={{
           ...createTheme({
-            direction: direction,
+            direction: i18n.language === 'ar' ? 'rtl' : 'ltr',
             palette: {
               mode: 'light',
             },

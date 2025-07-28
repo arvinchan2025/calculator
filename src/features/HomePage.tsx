@@ -8,7 +8,7 @@ import React from "react";
 
 const HomePage = () => {
   const {t} = useTranslation();
-  const {calculators} = useCalculatorContext()
+  const {calculators, getI18NPath} = useCalculatorContext()
   const navigate = useNavigate()
   return (
     <Grid container sx={{
@@ -30,7 +30,7 @@ const HomePage = () => {
                   textTransform: 'none'
                 }}
                 variant={"outlined"}
-                onClick={() => navigate(calculator.href)}
+                onClick={() => navigate(getI18NPath(calculator.href))}
               >
                 <Stack>
                   <Box className={"calculator-icon"}>{calculator.icon}</Box>
