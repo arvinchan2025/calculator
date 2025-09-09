@@ -1,0 +1,10 @@
+# ads.txt file for Google AdSense
+# This file helps verify authorized digital sellers for this domain
+# For more information, visit: https://support.google.com/adsense/answer/7532444
+
+# Google AdSense
+google.com, pub-8179572160013109, DIRECT, f08c47fec0942fa0
+
+# Add your actual Google AdSense Publisher ID here
+# Replace pub-0000000000000000 with your actual publisher ID
+# You can find your publisher ID in your AdSense account under Account > Account information
